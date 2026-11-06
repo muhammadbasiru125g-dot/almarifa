@@ -1,0 +1,2215 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="gold">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>المعرفة · Al-Ma'rifah — Enhance Your Skills & Knowledge</title>
+<meta name="description" content="Al-Ma'rifah Academy — online Qur'an classes, Microsoft Office, Google Workspace & AI training, plus professional document services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AL-MA'RIFAH ACADEMY — DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#c9a227; --accent-2:#e6c65a; --accent-3:#8a6d15;
+  --accent-glow:rgba(201,162,39,.35);
+  --r-sm:12px; --r:18px; --r-lg:26px; --r-xl:34px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-ar:'Amiri','Traditional Arabic',serif;
+  --fs:16px; --ar-size:29px; --tr-display:block;
+}
+[data-accent="emerald"]{--accent:#12a37a;--accent-2:#39d3a4;--accent-3:#0a6b50;--accent-glow:rgba(18,163,122,.35)}
+[data-accent="indigo"]{--accent:#6d5cf5;--accent-2:#9b8cff;--accent-3:#4436b8;--accent-glow:rgba(109,92,245,.35)}
+[data-accent="rose"]{--accent:#e0629a;--accent-2:#ff8fbe;--accent-3:#a83a6c;--accent-glow:rgba(224,98,154,.35)}
+[data-theme="dark"]{
+  --bg:#06080f; --bg-2:#0a0f1a; --bg-3:#0e1626;
+  --surface:rgba(255,255,255,.045); --surface-2:rgba(255,255,255,.075); --surface-3:rgba(255,255,255,.11);
+  --border:rgba(255,255,255,.10); --border-2:rgba(255,255,255,.18);
+  --text:#e9eef7; --text-2:#c3cfdd; --muted:#8b9ab0;
+  --glass:rgba(6,10,18,.82);
+  --shadow:0 28px 70px rgba(0,0,0,.6); --shadow-sm:0 10px 30px rgba(0,0,0,.45);
+  --sel-bg:rgba(255,255,255,.05);
+}
+[data-theme="light"]{
+  --bg:#f3f6fc; --bg-2:#ffffff; --bg-3:#ffffff;
+  --surface:#ffffff; --surface-2:#ffffff; --surface-3:#f1f5fb;
+  --border:rgba(11,26,48,.10); --border-2:rgba(11,26,48,.18);
+  --text:#08152a; --text-2:#2c3e57; --muted:#64748b;
+  --glass:rgba(255,255,255,.85);
+  --shadow:0 24px 60px rgba(15,32,60,.13); --shadow-sm:0 8px 24px rgba(15,32,60,.09);
+  --sel-bg:#f1f5fb;
+}
+html{scroll-behavior:smooth}
+[data-motion="reduced"] *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+body{
+  font-family:var(--font-sans); font-size:var(--fs);
+  background:var(--bg); color:var(--text); line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  transition:background .5s var(--ease),color .5s var(--ease);
+}
+img,svg{display:block;max-width:100%}
+button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(60% 45% at 12% 0%, var(--accent-glow), transparent 65%),
+    radial-gradient(55% 45% at 92% 8%, rgba(109,92,245,.16), transparent 65%),
+    radial-gradient(70% 50% at 50% 100%, rgba(18,163,122,.14), transparent 70%);
+  opacity:.75;
+}
+[data-theme="light"] body::before{opacity:.42}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:20px;border:2px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:var(--accent);background-clip:content-box}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;
+  background:linear-gradient(90deg,var(--accent-3),var(--accent-2),var(--accent));
+  box-shadow:0 0 18px var(--accent-glow);transition:width .1s linear}
+
+/* ─── HEADER ─── */
+header.nav{position:sticky;top:0;z-index:120;
+  backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);
+  background:var(--glass);border-bottom:1px solid var(--border);transition:background .5s var(--ease)}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 22px;height:72px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo-mark{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--accent-2),var(--accent) 55%,var(--accent-3));
+  box-shadow:0 6px 20px var(--accent-glow);
+  color:#0b1220;font-weight:700;font-family:var(--font-ar);font-size:22px;line-height:1}
+.logo-text{font-family:var(--font-serif);font-size:17px;font-weight:700;letter-spacing:.14em;line-height:1.05}
+.logo-text small{display:block;font-family:var(--font-sans);font-size:8px;letter-spacing:.28em;
+  color:var(--muted);font-weight:500;margin-top:4px;text-transform:uppercase}
+.nav-links{display:flex;gap:2px;margin-left:10px}
+.nav-links button{padding:9px 15px;border-radius:100px;font-size:13.5px;font-weight:500;
+  color:var(--muted);transition:all .3s var(--ease)}
+.nav-links button:hover{color:var(--text);background:var(--surface-2)}
+.nav-links button.active{color:#0b1220;background:linear-gradient(135deg,var(--accent-2),var(--accent));
+  box-shadow:0 6px 20px var(--accent-glow);font-weight:600}
+[data-theme="light"] .nav-links button.active{color:#fff}
+.nav-actions{display:flex;align-items:center;gap:4px;margin-left:auto}
+.icon-btn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+  color:var(--text-2);border:1px solid transparent;transition:all .3s var(--ease)}
+.icon-btn:hover{background:var(--surface-2);color:var(--text);border-color:var(--border);transform:translateY(-2px)}
+.icon-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 26px;border-radius:100px;font-size:14px;font-weight:600;
+  letter-spacing:.01em;cursor:pointer;border:1px solid transparent;
+  transition:all .35s var(--ease);white-space:nowrap;text-decoration:none}
+.btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-primary{background:linear-gradient(135deg,var(--accent-2),var(--accent) 60%,var(--accent-3));
+  color:#0b1220;box-shadow:0 10px 28px var(--accent-glow)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px var(--accent-glow);filter:brightness(1.06)}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border-2);backdrop-filter:blur(10px)}
+.btn-ghost:hover{background:var(--surface-2);transform:translateY(-3px);border-color:var(--accent)}
+.btn-sm{padding:9px 18px;font-size:12.5px}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important}
+
+/* ─── LAYOUT ─── */
+main{max-width:1360px;margin:0 auto;padding:0 22px 100px}
+.view{display:none;animation:fadeUp .55s var(--ease)}
+.view.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.section{padding:60px 0}
+.section-head{margin-bottom:36px}
+.kicker{font-size:10.5px;letter-spacing:.4em;text-indent:.4em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:28px;height:1px;background:var(--accent);opacity:.7}
+h2.title{font-family:var(--font-serif);font-size:clamp(30px,4.4vw,50px);font-weight:700;line-height:1.1;letter-spacing:-.01em}
+h2.title em{font-style:normal;color:var(--accent)}
+.lead{color:var(--muted);font-size:15.5px;font-weight:300;max-width:660px;margin-top:12px;line-height:1.75}
+
+/* ─── HERO ─── */
+.hero{padding:70px 0 50px;position:relative;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:100px;
+  background:var(--surface);border:1px solid var(--border-2);backdrop-filter:blur(12px);
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2);font-weight:500}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;
+  box-shadow:0 0 0 4px rgba(34,197,94,.18);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.hero-ar{font-family:var(--font-ar);font-size:clamp(28px,5vw,46px);font-weight:700;
+  color:var(--accent);margin-top:22px;line-height:1.4;direction:rtl}
+.hero h1{font-family:var(--font-serif);font-weight:700;
+  font-size:clamp(36px,6.4vw,78px);line-height:1.04;letter-spacing:-.025em;margin:14px auto 0;max-width:16ch}
+.hero h1 .grad{background:linear-gradient(115deg,var(--accent-2),var(--accent) 45%,var(--accent-3));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--muted);font-size:16px;font-weight:300;max-width:600px;margin:20px auto 0;line-height:1.8}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:24px 16px;text-align:center;backdrop-filter:blur(14px);
+  transition:all .45s var(--ease);position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(140deg,var(--accent-glow),transparent 60%);opacity:0;transition:opacity .45s}
+.stat:hover{transform:translateY(-6px);border-color:var(--accent)}
+.stat:hover::after{opacity:.5}
+.stat .num{font-family:var(--font-serif);font-size:38px;font-weight:700;line-height:1;
+  background:linear-gradient(135deg,var(--accent-2),var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:10px;font-weight:500}
+
+/* ─── GRIDS ─── */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+/* ─── CARDS ─── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+  overflow:hidden;position:relative;cursor:pointer;transition:all .45s var(--ease);backdrop-filter:blur(14px)}
+.card:hover{transform:translateY(-7px);border-color:var(--accent);box-shadow:var(--shadow)}
+.card-art{position:relative;aspect-ratio:16/9;overflow:hidden}
+.card-art svg{width:100%;height:100%;transition:transform .8s var(--ease)}
+.card:hover .card-art svg{transform:scale(1.07)}
+.card-art::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(4,10,18,.55));opacity:.85}
+.card-body{padding:20px 22px 22px}
+.card-body h3{font-family:var(--font-serif);font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
+.card-body p{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.65;font-weight:300}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  padding:5px 11px;border-radius:100px;background:var(--surface-3);
+  border:1px solid var(--border);color:var(--text-2)}
+.card-hover-tip{position:absolute;top:14px;right:14px;z-index:2;width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;background:rgba(255,255,255,.16);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.3);color:#fff;opacity:0;transform:scale(.7);transition:all .4s var(--ease)}
+.card:hover .card-hover-tip{opacity:1;transform:scale(1)}
+.card-hover-tip svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.2}
+
+/* ─── TRACK PANELS ─── */
+.track-panel{position:relative;border-radius:var(--r-xl);padding:40px 36px;
+  border:1px solid var(--border);overflow:hidden;background:var(--surface);
+  backdrop-filter:blur(16px);transition:all .5s var(--ease)}
+.track-panel::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(80% 100% at 0% 0%,var(--accent-glow),transparent 60%);opacity:.55}
+.track-panel.q{--accent-glow:rgba(18,163,122,.28)}
+.track-panel.c{--accent-glow:rgba(109,92,245,.28)}
+.track-panel:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow)}
+.track-panel > *{position:relative}
+.track-panel .tp-icon{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--accent-2),var(--accent-3));
+  box-shadow:0 10px 30px var(--accent-glow);margin-bottom:20px}
+.track-panel .tp-icon svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.7}
+.track-panel h3{font-family:var(--font-serif);font-size:28px;font-weight:700;line-height:1.15}
+.track-panel p{color:var(--muted);font-size:14px;margin-top:10px;font-weight:300;line-height:1.7}
+.track-panel ul{list-style:none;margin-top:18px;display:grid;gap:9px}
+.track-panel li{font-size:13.5px;color:var(--text-2);padding-left:22px;position:relative}
+.track-panel li::before{content:"";position:absolute;left:2px;top:7px;width:9px;height:9px;
+  border-radius:2.5px;transform:rotate(45deg);
+  background:linear-gradient(135deg,var(--accent-2),var(--accent))}
+.tp-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+
+/* ─── READER ─── */
+.reader{border:1px solid var(--border);border-radius:var(--r-xl);
+  background:var(--surface);backdrop-filter:blur(16px);overflow:hidden;box-shadow:var(--shadow-sm)}
+.reader-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:16px 20px;border-bottom:1px solid var(--border);background:var(--surface-2)}
+.select-wrap{position:relative;flex:1;min-width:210px}
+select.sel{width:100%;appearance:none;padding:11px 40px 11px 15px;border-radius:12px;
+  background:var(--bg-3);border:1px solid var(--border);color:var(--text);
+  font-size:13.5px;font-weight:500;cursor:pointer;outline:none;transition:border-color .3s}
+[data-theme="dark"] select.sel{background:var(--sel-bg)}
+select.sel:focus{border-color:var(--accent)}
+.select-wrap::after{content:"";position:absolute;right:16px;top:50%;width:7px;height:7px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.reader-tabs{display:flex;gap:4px;overflow-x:auto;padding:12px 20px;border-bottom:1px solid var(--border);scrollbar-width:none}
+.reader-tabs::-webkit-scrollbar{display:none}
+.rtab{padding:9px 16px;border-radius:100px;font-size:12.5px;font-weight:500;
+  color:var(--muted);white-space:nowrap;transition:all .3s var(--ease);border:1px solid transparent}
+.rtab:hover{color:var(--text);background:var(--surface-2)}
+.rtab.active{color:#0b1220;background:linear-gradient(135deg,var(--accent-2),var(--accent));
+  font-weight:600;box-shadow:0 6px 18px var(--accent-glow)}
+[data-theme="light"] .rtab.active{color:#fff}
+.reader-body{padding:26px 24px;min-height:320px;max-height:660px;overflow-y:auto}
+.surah-head{text-align:center;padding:22px 10px 28px;border-bottom:1px dashed var(--border);margin-bottom:24px}
+.surah-head .ar{font-family:var(--font-ar);font-size:34px;font-weight:700;color:var(--accent);line-height:1.5;direction:rtl}
+.surah-head .en{font-family:var(--font-serif);font-size:22px;font-weight:600;margin-top:6px}
+.surah-head .meta{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.ayah{padding:20px 18px;border-radius:var(--r);border:1px solid transparent;transition:all .35s var(--ease);position:relative}
+.ayah:hover{background:var(--surface-2);border-color:var(--border)}
+.ayah + .ayah{margin-top:6px}
+.ayah-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ayah-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:var(--accent);background:var(--surface-3);border:1px solid var(--border-2)}
+.ayah-actions{display:flex;gap:4px;margin-left:auto}
+.ayah-actions button{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
+  color:var(--muted);transition:all .25s}
+.ayah-actions button:hover{background:var(--surface-3);color:var(--accent)}
+.ayah-actions button.on{color:var(--accent);background:var(--surface-3)}
+.ayah-actions svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ayah-actions button.on svg{fill:currentColor}
+.ayah-ar{font-family:var(--font-ar);font-size:var(--ar-size);line-height:2.1;direction:rtl;text-align:right;color:var(--text)}
+.ayah-tr{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.75;font-weight:300;display:var(--tr-display)}
+.mini-card{border:1px solid var(--border);border-radius:var(--r);padding:20px;
+  background:var(--surface-2);transition:all .35s var(--ease)}
+.mini-card + .mini-card{margin-top:12px}
+.mini-card:hover{border-color:var(--accent)}
+.mini-card h4{font-size:14px;font-weight:600;margin-bottom:6px}
+.mini-card p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7}
+.empty{text-align:center;padding:56px 20px;color:var(--muted)}
+.empty svg{width:48px;height:48px;margin:0 auto 16px;stroke:var(--border-2);fill:none;stroke-width:1.4}
+.empty p{font-size:14px;font-weight:300}
+.progress-line{height:8px;border-radius:100px;background:var(--surface-3);overflow:hidden;margin-top:12px}
+.progress-line > i{display:block;height:100%;border-radius:100px;
+  background:linear-gradient(90deg,var(--accent-3),var(--accent-2));transition:width .6s var(--ease)}
+.memo-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:var(--r-sm);
+  border:1px solid var(--border);background:var(--surface-2);margin-bottom:8px;transition:all .3s var(--ease);cursor:pointer}
+.memo-row:hover{border-color:var(--accent);transform:translateX(3px)}
+.memo-check{width:24px;height:24px;border-radius:8px;border:1.6px solid var(--border-2);
+  display:grid;place-items:center;flex-shrink:0;transition:all .3s var(--ease)}
+.memo-check svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:3;opacity:0;transition:opacity .25s}
+.memo-row.done .memo-check{background:var(--accent);border-color:var(--accent)}
+.memo-row.done .memo-check svg{opacity:1}
+.memo-row.done .memo-name{text-decoration:line-through;color:var(--muted)}
+.memo-name{font-size:13.5px;font-weight:500}
+.memo-meta{font-size:11.5px;color:var(--muted);margin-left:auto}
+
+/* ─── FORM ─── */
+.field{margin-bottom:16px}
+.field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border-radius:12px;
+  background:var(--bg-3);border:1px solid var(--border);color:var(--text);
+  font-size:14px;outline:none;transition:all .3s var(--ease)}
+[data-theme="dark"] .field input,[data-theme="dark"] .field select,[data-theme="dark"] .field textarea{background:var(--sel-bg)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-glow)}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:.65}
+.field textarea{resize:vertical;min-height:82px}
+.field.err input,.field.err select{border-color:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,.15)}
+.field .msg{font-size:11.5px;color:#ef4444;margin-top:6px;display:none}
+.field.err .msg{display:block}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{padding:10px 16px;border-radius:100px;font-size:12.5px;font-weight:500;
+  border:1px solid var(--border);background:var(--bg-3);color:var(--text-2);transition:all .3s var(--ease)}
+[data-theme="dark"] .seg button{background:var(--sel-bg)}
+.seg button:hover{border-color:var(--accent)}
+.seg button.on{background:linear-gradient(135deg,var(--accent-2),var(--accent));
+  color:#0b1220;border-color:transparent;font-weight:600;box-shadow:0 6px 18px var(--accent-glow)}
+[data-theme="light"] .seg button.on{color:#fff}
+
+/* ─── MODALS ─── */
+.modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(3,8,16,.72);backdrop-filter:blur(10px);animation:fadeIn .3s var(--ease)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-box{position:relative;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
+  background:var(--bg-2);border:1px solid var(--border-2);border-radius:var(--r-xl);
+  box-shadow:0 40px 100px rgba(0,0,0,.6);animation:modalIn .45s var(--ease)}
+.modal-box.wide{max-width:760px}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:none}}
+.modal-head{padding:24px 26px 18px;border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;gap:16px;position:sticky;top:0;
+  background:var(--bg-2);z-index:2;border-radius:var(--r-xl) var(--r-xl) 0 0}
+.modal-head h3{font-family:var(--font-serif);font-size:25px;font-weight:700;line-height:1.2}
+.modal-head p{font-size:13px;color:var(--muted);margin-top:4px;font-weight:300}
+.modal-close{margin-left:auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:var(--muted);transition:all .3s;flex-shrink:0}
+.modal-close:hover{background:var(--surface-3);color:var(--text);transform:rotate(90deg)}
+.modal-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.modal-body{padding:22px 26px 26px}
+
+/* ─── SUCCESS ─── */
+.success{text-align:center;padding:20px 0}
+.success-ring{width:92px;height:92px;border-radius:50%;margin:0 auto 24px;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--accent-2),var(--accent-3));
+  box-shadow:0 0 0 0 var(--accent-glow);animation:ringPop .7s var(--ease)}
+@keyframes ringPop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+.success-ring svg{width:44px;height:44px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.success h3{font-family:var(--font-serif);font-size:28px;font-weight:700;margin-bottom:10px}
+.success p{color:var(--muted);font-size:14px;font-weight:300;line-height:1.7;max-width:420px;margin:0 auto}
+.success .note{font-size:12px;margin-top:16px;padding:12px;border-radius:12px;
+  background:var(--surface-2);border:1px solid var(--border);color:var(--muted)}
+
+/* ─── STARS ─── */
+.stars{display:flex;gap:10px;justify-content:center;margin:22px 0}
+.star-btn{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;transition:all .3s var(--ease)}
+.star-btn svg{width:32px;height:32px;stroke:var(--border-2);fill:none;stroke-width:1.6;transition:all .3s var(--ease)}
+.star-btn:hover{transform:scale(1.15)}
+.star-btn:hover svg,.star-btn.on svg{stroke:var(--accent);fill:var(--accent);filter:drop-shadow(0 0 8px var(--accent-glow))}
+
+/* ─── SHARE ─── */
+.share-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.share-item{display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:18px 10px;border-radius:var(--r);border:1px solid var(--border);
+  background:var(--surface-2);transition:all .35s var(--ease);font-size:12px;font-weight:500;color:var(--text-2)}
+.share-item:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--shadow-sm)}
+.share-ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+  font-weight:700;font-size:17px;color:#fff;font-family:var(--font-sans)}
+
+/* ─── SEARCH ─── */
+.overlay{position:fixed;inset:0;z-index:310;display:none;background:rgba(3,8,16,.8);
+  backdrop-filter:blur(14px);padding:80px 20px 20px}
+.overlay.open{display:block;animation:fadeIn .3s var(--ease)}
+.search-box{max-width:640px;margin:0 auto}
+.search-input-wrap{position:relative}
+.search-input-wrap svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);
+  width:20px;height:20px;stroke:var(--muted);fill:none;stroke-width:2}
+#searchInput{width:100%;padding:19px 20px 19px 56px;border-radius:var(--r);
+  background:var(--bg-2);border:1px solid var(--border-2);color:var(--text);
+  font-size:16px;outline:none;box-shadow:var(--shadow)}
+#searchInput:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-glow),var(--shadow)}
+.search-results{margin-top:14px;max-height:60vh;overflow-y:auto}
+.sr-item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r-sm);
+  cursor:pointer;transition:all .25s;border:1px solid transparent}
+.sr-item:hover{background:var(--surface-2);border-color:var(--border)}
+.sr-ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex-shrink:0;
+  background:var(--surface-3);color:var(--accent)}
+.sr-ico svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+.sr-t{font-size:14px;font-weight:500}
+.sr-s{font-size:12px;color:var(--muted)}
+
+/* ─── DRAWERS ─── */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:320;
+  background:var(--bg-2);border-left:1px solid var(--border-2);
+  transform:translateX(102%);transition:transform .5s var(--ease);
+  display:flex;flex-direction:column;box-shadow:-30px 0 80px rgba(0,0,0,.4)}
+.drawer.open{transform:none}
+.drawer.left{right:auto;left:0;transform:translateX(-102%);border-left:none;border-right:1px solid var(--border-2)}
+.drawer.left.open{transform:none}
+.drawer-head{padding:20px 22px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px}
+.drawer-head h3{font-family:var(--font-serif);font-size:22px;font-weight:700}
+.drawer-body{padding:20px 22px;overflow-y:auto;flex:1}
+.set-group{margin-bottom:26px}
+.set-group h4{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin-bottom:14px}
+.set-row{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:12px 0;border-bottom:1px solid var(--border)}
+.set-row:last-child{border-bottom:none}
+.set-row .lbl{font-size:13.5px;font-weight:500}
+.set-row .sub{font-size:11.5px;color:var(--muted);margin-top:2px;font-weight:300}
+.switch{width:48px;height:28px;border-radius:100px;background:var(--surface-3);
+  border:1px solid var(--border-2);position:relative;flex-shrink:0;transition:all .35s var(--ease)}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;
+  border-radius:50%;background:var(--muted);transition:all .35s var(--ease)}
+.switch.on{background:linear-gradient(135deg,var(--accent-2),var(--accent));border-color:transparent}
+.switch.on::after{left:23px;background:#fff}
+.swatches{display:flex;gap:12px}
+.swatch{width:38px;height:38px;border-radius:12px;border:2px solid transparent;transition:all .3s var(--ease)}
+.swatch:hover{transform:scale(1.1)}
+.swatch.on{border-color:var(--text);box-shadow:0 0 0 4px var(--accent-glow)}
+.menu-link{display:flex;align-items:center;gap:14px;padding:13px 14px;border-radius:var(--r-sm);
+  font-size:14px;font-weight:500;transition:all .3s var(--ease);width:100%;text-align:left;color:var(--text-2)}
+.menu-link:hover{background:var(--surface-2);color:var(--text);transform:translateX(4px)}
+.menu-link svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ─── TOAST ─── */
+#toasts{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:400;
+  display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none;
+  width:max-content;max-width:92vw}
+.toast{display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:100px;
+  background:var(--bg-2);border:1px solid var(--border-2);box-shadow:var(--shadow);
+  font-size:13.5px;font-weight:500;animation:toastIn .45s var(--ease);backdrop-filter:blur(16px)}
+@keyframes toastIn{from{opacity:0;transform:translateY(24px) scale(.9)}to{opacity:1;transform:none}}
+.toast.out{animation:toastOut .35s var(--ease) forwards}
+@keyframes toastOut{to{opacity:0;transform:translateY(16px) scale(.95)}}
+.toast-ico{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+.toast-ico svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.toast.ok .toast-ico{background:#22c55e}
+.toast.info .toast-ico{background:var(--accent)}
+.toast.err .toast-ico{background:#ef4444}
+
+/* ─── GALLERY ─── */
+.upload-zone{border:2px dashed var(--border-2);border-radius:var(--r-lg);padding:36px 24px;
+  text-align:center;transition:all .35s var(--ease);cursor:pointer;background:var(--surface)}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--accent);background:var(--surface-2)}
+.upload-zone svg{width:40px;height:40px;stroke:var(--accent);fill:none;stroke-width:1.5;margin:0 auto 14px}
+.upload-zone h4{font-size:15px;font-weight:600}
+.upload-zone p{font-size:12.5px;color:var(--muted);margin-top:6px;font-weight:300}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:22px}
+.gal-item{position:relative;aspect-ratio:1;border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--border);animation:fadeUp .4s var(--ease)}
+.gal-item img{width:100%;height:100%;object-fit:cover}
+.gal-del{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;
+  background:rgba(0,0,0,.65);display:grid;place-items:center;color:#fff;opacity:0;transition:all .3s}
+.gal-item:hover .gal-del{opacity:1}
+.gal-del svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4}
+
+/* ─── ART MODAL ─── */
+.art-hero{aspect-ratio:16/8;border-radius:var(--r-lg);overflow:hidden;margin-bottom:22px}
+.art-hero svg{width:100%;height:100%}
+.art-list{list-style:none;display:grid;gap:10px;margin-top:18px}
+.art-list li{font-size:13.5px;color:var(--text-2);padding-left:26px;position:relative;line-height:1.6}
+.art-list li::before{content:"";position:absolute;left:2px;top:6px;width:10px;height:10px;
+  border-radius:3px;transform:rotate(45deg);
+  background:linear-gradient(135deg,var(--accent-2),var(--accent))}
+
+/* ─── CONTACT ─── */
+.contact-row{display:flex;align-items:center;gap:16px;padding:16px;border-radius:var(--r);
+  border:1px solid var(--border);background:var(--surface-2);margin-bottom:10px;
+  transition:all .3s var(--ease);text-decoration:none;color:inherit}
+.contact-row:hover{border-color:var(--accent);transform:translateX(4px)}
+.contact-ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--accent-2),var(--accent-3));flex-shrink:0}
+.contact-ico svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.9}
+.contact-info{flex:1}
+.contact-info .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.contact-info .val{font-size:14.5px;font-weight:600;margin-top:2px;word-break:break-word}
+
+/* ─── FOOTER ─── */
+footer{border-top:1px solid var(--border);padding:52px 22px 36px;background:var(--bg-2)}
+.foot-inner{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}
+.foot-brand{font-family:var(--font-serif);font-size:21px;font-weight:700;letter-spacing:.14em}
+.foot-brand small{display:block;font-family:var(--font-sans);font-size:9px;letter-spacing:.3em;
+  color:var(--muted);margin-top:6px;font-weight:400}
+.foot-col h5{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;font-size:13.5px;color:var(--text-2);margin-bottom:9px;
+  font-weight:300;transition:color .3s}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{max-width:1360px;margin:36px auto 0;padding-top:22px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+
+#toTop{position:fixed;bottom:24px;right:24px;z-index:110;width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;background:linear-gradient(140deg,var(--accent-2),var(--accent-3));
+  color:#0b1220;box-shadow:0 10px 30px var(--accent-glow);
+  opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s var(--ease)}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+#toTop:hover{transform:translateY(-4px)}
+#toTop svg{width:20px;height:20px;stroke:#0b1220;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+#confetti{position:fixed;inset:0;z-index:350;pointer-events:none;display:none}
+#confetti.on{display:block}
+
+/* ─── RESPONSIVE ─── */
+.only-mobile{display:none}
+@media (max-width:1080px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .foot-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav-links{display:none}
+  .only-mobile{display:grid}
+  .nav-actions .icon-btn.opt{display:none}
+  .stats{grid-template-columns:repeat(2,1fr);gap:12px}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .track-panel{padding:30px 22px}
+  .hero{padding:44px 0 32px}
+  main{padding:0 16px 80px}
+  .nav-inner{padding:0 14px;height:64px;gap:8px}
+  .logo-mark{width:38px;height:38px;font-size:18px}
+  .logo-text{font-size:14px;letter-spacing:.1em}
+  .logo-text small{font-size:7px}
+  .foot-inner{grid-template-columns:1fr;gap:26px}
+  .modal-box{max-height:94vh;border-radius:var(--r-lg)}
+  .modal-head{padding:20px 18px 14px}
+  .modal-body{padding:18px}
+  .reader-body{padding:18px 14px;max-height:none}
+  .ayah-ar{font-size:calc(var(--ar-size) - 3px)}
+  .row-2{grid-template-columns:1fr}
+  .share-grid{grid-template-columns:repeat(2,1fr)}
+  .section{padding:42px 0}
+  .icon-btn{width:36px;height:36px}
+}
+@media (max-width:480px){
+  .hero h1{font-size:34px}
+  .hero-ar{font-size:26px}
+  .btn{padding:12px 18px;font-size:13px}
+  .grid-4{grid-template-columns:1fr}
+  .stat .num{font-size:30px}
+  .share-grid{grid-template-columns:1fr 1fr}
+  .stats{gap:10px}
+  .stat{padding:18px 10px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ SVG SPRITE ═══════ -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13.2A8.5 8.5 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2z"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 9 4.6a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.1 1.1-6.5L2.6 9.5l6.5-1z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.7-7.5-10A4.2 4.2 0 0 1 12 7.8a4.2 4.2 0 0 1 7.5 2.7c0 5.3-7.5 10-7.5 10z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5A2.5 2.5 0 0 1 20 21.5z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M4 20h4L20 8l-4-4L4 16z"/><path d="M14 6l4 4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5"/><path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/><path d="M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></symbol>
+  <symbol id="i-slides" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-ai" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><path d="M6 7l3.2 3M18 7l-3.2 3M6 17l3.2-3M18 17l-3.2-3"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.9 2-1.8 0-1.4-1-1.7-1-2.7 0-.9.8-1.5 1.8-1.5H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h9"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 0 2 2H8a2 2 0 0 1-2-2z"/><path d="M6 3a2 2 0 0 0-2 2v2h4"/><path d="M9 9h7M9 13h7"/></symbol>
+  <symbol id="i-letters" viewBox="0 0 24 24"><path d="M4 20L10 4l6 16"/><path d="M6.5 15h7"/><path d="M18 20V9"/><path d="M18 9a2 2 0 1 0 0-3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 4v5h-5"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-1.5 4L16 12H5"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.7 7L4 20l1-4.3A8 8 0 1 1 20 12z"/><path d="M9 9a3 3 0 0 1 3-1c1 0 2 1 2 2 0 2-2 2-2 4"/></symbol>
+</svg>
+
+<div id="progress"></div>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#" onclick="showView('home');return false">
+      <div class="logo-mark">م</div>
+      <div class="logo-text">AL-MA'RIFAH<small>المعرفة · Knowledge</small></div>
+    </a>
+    <nav class="nav-links">
+      <button data-view="home" class="active">Home</button>
+      <button data-view="computer">Computer</button>
+      <button data-view="quran">Qur'an</button>
+      <button data-view="services">Services</button>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchBtn" title="Search ( / )" aria-label="Search"><svg><use href="#i-search"/></svg></button>
+      <button class="icon-btn opt" id="shareBtn" title="Share" aria-label="Share"><svg><use href="#i-share"/></svg></button>
+      <button class="icon-btn opt" id="contactBtn" title="Contact us" aria-label="Contact"><svg><use href="#i-phone"/></svg></button>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme"><svg><use href="#i-moon"/></svg></button>
+      <button class="icon-btn" id="settingsBtn" title="Settings" aria-label="Settings"><svg><use href="#i-settings"/></svg></button>
+      <button class="icon-btn only-mobile" id="menuBtn" title="Menu" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════ VIEW · HOME ═══════════════ -->
+<section class="view active" id="view-home">
+  <div class="hero">
+    <div class="hero-badge"><span class="dot"></span> Enrollment Open · Worldwide Online</div>
+    <div class="hero-ar">المعرفة</div>
+    <h1>Enhance Your<br><span class="grad">Skills & Knowledge.</span></h1>
+    <p class="sub">Live online classes in Qur'anic studies, Microsoft Office, Google Workspace and Artificial Intelligence — taught with care, patience and excellence.</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" onclick="showView('computer')"><svg><use href="#i-ai"/></svg> Explore Computer Track</button>
+      <button class="btn btn-ghost" onclick="showView('quran')"><svg><use href="#i-book"/></svg> Explore Qur'an Track</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num" data-count="114">0</div><div class="lbl">Surahs</div></div>
+      <div class="stat"><div class="num" data-count="8">0</div><div class="lbl">Digital Skills</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Online</div></div>
+      <div class="stat"><div class="num" data-count="8" data-suffix="+">0</div><div class="lbl">Services</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Two Paths · One Academy</div>
+      <h2 class="title">Choose your <em>journey</em>.</h2>
+      <p class="lead">Each track is layered — start where you are and grow step by step with live guidance.</p>
+    </div>
+    <div class="grid-2">
+      <div class="track-panel c">
+        <div class="tp-icon"><svg><use href="#i-ai"/></svg></div>
+        <h3>Computer Skills</h3>
+        <p>From documents to AI — practical, project-based training for study, work and business.</p>
+        <ul>
+          <li>Word · Excel · PowerPoint</li>
+          <li>Microsoft Forms</li>
+          <li>Google Docs · Forms · Gmail</li>
+          <li>Artificial Intelligence</li>
+        </ul>
+        <div class="tp-actions">
+          <button class="btn btn-primary btn-sm" onclick="openEnroll('computer')"><svg><use href="#i-user"/></svg> Enroll Now</button>
+          <button class="btn btn-ghost btn-sm" onclick="openRate('computer')"><svg><use href="#i-star"/></svg> Rate Us</button>
+          <button class="btn btn-ghost btn-sm" onclick="showView('computer')">Explore →</button>
+        </div>
+      </div>
+      <div class="track-panel q">
+        <div class="tp-icon"><svg><use href="#i-book"/></svg></div>
+        <h3>Qur'an Studies</h3>
+        <p>Recitation, memorisation and understanding — with certified teachers and a personal plan.</p>
+        <ul>
+          <li>Tajweed & Makharij</li>
+          <li>Hifdh & Revision</li>
+          <li>Tafsir & Meaning</li>
+          <li>Arabic Reading</li>
+        </ul>
+        <div class="tp-actions">
+          <button class="btn btn-primary btn-sm" onclick="openEnroll('quran')"><svg><use href="#i-user"/></svg> Enroll Now</button>
+          <button class="btn btn-ghost btn-sm" onclick="openRate('quran')"><svg><use href="#i-star"/></svg> Rate Us</button>
+          <button class="btn btn-ghost btn-sm" onclick="showView('quran')">Explore →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="homeReaderSection">
+    <div class="section-head">
+      <div class="kicker">Qur'an Reader</div>
+      <h2 class="title">Read · Review · <em>Remember</em>.</h2>
+      <p class="lead">All 114 surahs — with review, memorisation tracking, notes, starred ayat and favourite surahs. Everything is saved on your device.</p>
+    </div>
+    <div class="reader">
+      <div class="reader-bar">
+        <div class="select-wrap">
+          <select class="sel" id="surahSelect"></select>
+        </div>
+        <button class="btn btn-ghost btn-sm" type="button" onclick="openSearch()"><svg><use href="#i-search"/></svg> Search</button>
+        <button class="btn btn-ghost btn-sm" type="button" onclick="readerRandom()"><svg><use href="#i-refresh"/></svg> Random</button>
+      </div>
+      <div class="reader-tabs" id="readerTabs">
+        <button class="rtab active" data-rtab="read" type="button">Read</button>
+        <button class="rtab" data-rtab="review" type="button">Review Ayat</button>
+        <button class="rtab" data-rtab="memo" type="button">My Memorization</button>
+        <button class="rtab" data-rtab="notes" type="button">My Notes</button>
+        <button class="rtab" data-rtab="starred" type="button">Starred Ayat</button>
+        <button class="rtab" data-rtab="favsurah" type="button">Favorite Surahs</button>
+      </div>
+      <div class="reader-body" id="readerBody"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Quick Access</div>
+      <h2 class="title">Everything, <em>one click away</em>.</h2>
+    </div>
+    <div class="grid-4">
+      <div class="card" onclick="showView('computer')">
+        <div class="card-art" id="qa-art1"></div>
+        <div class="card-body"><h3>Skill Library</h3><p>Word, Excel, PowerPoint, Forms, Google Workspace & AI.</p></div>
+      </div>
+      <div class="card" onclick="showView('quran')">
+        <div class="card-art" id="qa-art2"></div>
+        <div class="card-body"><h3>Qur'an Classes</h3><p>Tajweed, hifdh, tafsir, Arabic reading & recitation.</p></div>
+      </div>
+      <div class="card" onclick="showView('services')">
+        <div class="card-art" id="qa-art3"></div>
+        <div class="card-body"><h3>Document Services</h3><p>PDF → Word, research formatting, indexes & editing.</p></div>
+      </div>
+      <div class="card" onclick="openEnroll('both')">
+        <div class="card-art" id="qa-art4"></div>
+        <div class="card-body"><h3>Enroll Today</h3><p>Fill a short form and we'll contact you to schedule your first class.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ VIEW · COMPUTER ═══════════════ -->
+<section class="view" id="view-computer">
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Track 01 · Digital Skills</div>
+      <h2 class="title">The <em>Computer</em> Track.</h2>
+      <p class="lead">Practical, project-based training in Microsoft Office, Google Workspace and Artificial Intelligence — from absolute beginner to confident user.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+        <button class="btn btn-primary" onclick="openEnroll('computer')"><svg><use href="#i-user"/></svg> Enroll in Computer Track</button>
+        <button class="btn btn-ghost" onclick="openRate('computer')"><svg><use href="#i-star"/></svg> Rate this Track</button>
+        <a class="btn btn-ghost" href="https://www.youtube.com/@technologyforteachersandstudents" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg> Visit YouTube Channel</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0">
+    <div class="section-head">
+      <div class="kicker">Skills Covered</div>
+      <h2 class="title">Eight <em>core tools</em>.</h2>
+      <p class="lead">Click any skill to see what you'll learn.</p>
+    </div>
+    <div class="grid-4" id="computerSkills"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Your Path</div>
+      <h2 class="title">From zero to <em>confident</em>.</h2>
+    </div>
+    <div class="grid-3" id="computerPath"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Video Resources</div>
+      <h2 class="title">Learn from <em>Technology for Teachers and Students</em>.</h2>
+      <p class="lead">A trusted YouTube channel with clear, practical tutorials for every tool on our list.</p>
+    </div>
+    <div class="grid-3" id="computerResources"></div>
+    <div style="text-align:center;margin-top:32px">
+      <a class="btn btn-primary" href="https://www.youtube.com/@technologyforteachersandstudents" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg> Open the Channel</a>
+    </div>
+  </div>
+
+  <div class="section" style="text-align:center">
+    <div class="mini-card" style="max-width:600px;margin:0 auto;padding:32px">
+      <h4 style="font-family:var(--font-serif);font-size:24px;margin-bottom:8px">Ready to start?</h4>
+      <p style="margin-bottom:18px">Enroll today and we'll schedule your first session.</p>
+      <button class="btn btn-primary" onclick="openEnroll('computer')"><svg><use href="#i-user"/></svg> Enroll Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ VIEW · QUR'AN ═══════════════ -->
+<section class="view" id="view-quran">
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Track 02 · Qur'anic Studies</div>
+      <h2 class="title">The <em>Qur'an</em> Track.</h2>
+      <p class="lead">Personalised recitation, memorisation and tafsir classes — supported by a full in-browser Qur'an reader with notes, favourites and progress tracking.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+        <button class="btn btn-primary" onclick="openEnroll('quran')"><svg><use href="#i-user"/></svg> Enroll in Qur'an Track</button>
+        <button class="btn btn-ghost" onclick="openRate('quran')"><svg><use href="#i-star"/></svg> Rate this Track</button>
+        <button class="btn btn-ghost" onclick="showView('home');setTimeout(()=>document.getElementById('homeReaderSection').scrollIntoView({behavior:'smooth'}),400)"><svg><use href="#i-book"/></svg> Open Full Reader</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0">
+    <div class="section-head">
+      <div class="kicker">Classes Offered</div>
+      <h2 class="title">What you'll <em>learn</em>.</h2>
+      <p class="lead">Click any class to see what you'll cover.</p>
+    </div>
+    <div class="grid-3" id="quranClasses"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Resources</div>
+      <h2 class="title">Watch &amp; <em>listen</em>.</h2>
+      <p class="lead">Curated links to trusted recitation, tafsir and learning channels.</p>
+    </div>
+    <div class="grid-3" id="quranResources"></div>
+  </div>
+
+  <div class="section" style="text-align:center">
+    <div class="mini-card" style="max-width:600px;margin:0 auto;padding:32px">
+      <h4 style="font-family:var(--font-serif);font-size:24px;margin-bottom:8px">Begin your journey today</h4>
+      <p style="margin-bottom:18px">Enroll and we'll match you with the right teacher.</p>
+      <button class="btn btn-primary" onclick="openEnroll('quran')"><svg><use href="#i-user"/></svg> Enroll Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ VIEW · SERVICES ═══════════════ -->
+<section class="view" id="view-services">
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Professional Services</div>
+      <h2 class="title">We do the <em>heavy lifting</em>.</h2>
+      <p class="lead">Expert document, research and design services for students, researchers, teachers and institutions. Send us your file — we return it polished and ready.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+        <button class="btn btn-primary" onclick="openEnroll('services')"><svg><use href="#i-user"/></svg> Request a Service</button>
+        <button class="btn btn-ghost" onclick="openRate('services')"><svg><use href="#i-star"/></svg> Rate Our Services</button>
+        <button class="btn btn-ghost" onclick="openContact()"><svg><use href="#i-phone"/></svg> Contact Us</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0">
+    <div class="grid-4" id="serviceCards"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="kicker">Your Uploads</div>
+      <h2 class="title">Your <em>gallery</em>.</h2>
+      <p class="lead">Upload reference images, screenshots or design inspiration. Everything stays on your device.</p>
+    </div>
+    <div class="upload-zone" id="uploadZone">
+      <svg><use href="#i-upload"/></svg>
+      <h4>Drop images here or click to upload</h4>
+      <p>PNG, JPG, WEBP, GIF · stored locally in your browser</p>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">AL-MA'RIFAH ACADEMY<small>المعرفة · QUR'AN · OFFICE · AI · RESEARCH</small></div>
+      <p style="font-size:13.5px;color:var(--muted);margin-top:14px;font-weight:300;max-width:360px;line-height:1.75">
+        Enhance your skills and knowledge with online classes and professional document services — delivered worldwide with care and excellence.
+      </p>
+      <p style="font-size:12.5px;color:var(--muted);margin-top:14px;font-weight:300">
+        <strong style="color:var(--text-2)">Address:</strong><br>
+        Global Online Campus · Cairo, Egypt · Banjul, The Gambia
+      </p>
+    </div>
+    <div class="foot-col">
+      <h5>Explore</h5>
+      <a href="#" onclick="showView('computer');return false">Computer Track</a>
+      <a href="#" onclick="showView('quran');return false">Qur'an Track</a>
+      <a href="#" onclick="showView('services');return false">Services</a>
+      <a href="#" onclick="openEnroll('both');return false">Enroll</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact Us</h5>
+      <a href="tel:+201285968529">+20 12 8596 8529</a>
+      <a href="tel:+220835055653">+220 83 505 5653</a>
+      <a href="mailto:Muhammadbasiru125g@gmail.com">Muhammadbasiru125g@gmail.com</a>
+      <a href="https://wa.me/220835055653" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year"></span> Al-Ma'rifah Academy · المعرفة. All rights reserved.</span>
+    <span>Made with care · <a href="#" onclick="openShare();return false" style="color:var(--accent)">Share this page</a></span>
+  </div>
+</footer>
+
+<button id="toTop" title="Back to top" aria-label="Back to top"><svg><use href="#i-arrow"/></svg></button>
+<canvas id="confetti"></canvas>
+
+<!-- ═══════ DRAWER · MOBILE MENU ═══════ -->
+<aside class="drawer left" id="menuDrawer">
+  <div class="drawer-head">
+    <h3>Menu</h3>
+    <button class="modal-close" style="margin-left:auto" onclick="closeDrawer('menuDrawer')"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer-body">
+    <button class="menu-link" onclick="showView('home');closeDrawer('menuDrawer')"><svg><use href="#i-layers"/></svg> Home</button>
+    <button class="menu-link" onclick="showView('computer');closeDrawer('menuDrawer')"><svg><use href="#i-ai"/></svg> Computer Track</button>
+    <button class="menu-link" onclick="showView('quran');closeDrawer('menuDrawer')"><svg><use href="#i-book"/></svg> Qur'an Track</button>
+    <button class="menu-link" onclick="showView('services');closeDrawer('menuDrawer')"><svg><use href="#i-doc"/></svg> Services</button>
+    <div style="height:1px;background:var(--border);margin:14px 0"></div>
+    <button class="menu-link" onclick="closeDrawer('menuDrawer');openSearch()"><svg><use href="#i-search"/></svg> Search</button>
+    <button class="menu-link" onclick="closeDrawer('menuDrawer');openShare()"><svg><use href="#i-share"/></svg> Share</button>
+    <button class="menu-link" onclick="closeDrawer('menuDrawer');openContact()"><svg><use href="#i-phone"/></svg> Contact Us</button>
+    <button class="menu-link" onclick="closeDrawer('menuDrawer');openSettings()"><svg><use href="#i-settings"/></svg> Settings</button>
+    <button class="menu-link" onclick="closeDrawer('menuDrawer');openEnroll('both')"><svg><use href="#i-user"/></svg> Enroll Now</button>
+    <div style="height:1px;background:var(--border);margin:14px 0"></div>
+    <button class="menu-link" onclick="closeDrawer('menuDrawer');toggleTheme()"><svg><use href="#i-moon"/></svg> Toggle Theme</button>
+  </div>
+</aside>
+
+<!-- ═══════ DRAWER · SETTINGS ═══════ -->
+<aside class="drawer" id="settingsDrawer">
+  <div class="drawer-head">
+    <h3>Settings</h3>
+    <button class="modal-close" style="margin-left:auto" onclick="closeDrawer('settingsDrawer')"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer-body">
+    <div class="set-group">
+      <h4>Appearance</h4>
+      <div class="set-row">
+        <div><div class="lbl">Theme</div><div class="sub">Light or dark interface</div></div>
+        <div class="seg" id="themeSeg">
+          <button data-theme-set="light" type="button">Light</button>
+          <button data-theme-set="dark" type="button" class="on">Dark</button>
+        </div>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Accent colour</div><div class="sub">Personalise the highlights</div></div>
+        <div class="swatches">
+          <button class="swatch on" data-accent-set="gold" type="button" style="background:linear-gradient(135deg,#e6c65a,#c9a227)" aria-label="Gold"></button>
+          <button class="swatch" data-accent-set="emerald" type="button" style="background:linear-gradient(135deg,#39d3a4,#12a37a)" aria-label="Emerald"></button>
+          <button class="swatch" data-accent-set="indigo" type="button" style="background:linear-gradient(135deg,#9b8cff,#6d5cf5)" aria-label="Indigo"></button>
+          <button class="swatch" data-accent-set="rose" type="button" style="background:linear-gradient(135deg,#ff8fbe,#e0629a)" aria-label="Rose"></button>
+        </div>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Reduce motion</div><div class="sub">Calmer animations</div></div>
+        <button class="switch" data-toggle="motion" type="button" aria-label="Reduce motion"></button>
+      </div>
+    </div>
+    <div class="set-group">
+      <h4>Qur'an Reader</h4>
+      <div class="set-row">
+        <div><div class="lbl">Arabic font size</div><div class="sub"><span id="arSizeLabel">29</span>px</div></div>
+      </div>
+      <input type="range" id="arSize" min="22" max="42" value="29" style="width:100%;accent-color:var(--accent);cursor:pointer">
+      <div class="set-row" style="margin-top:8px">
+        <div><div class="lbl">Show translation</div><div class="sub">English meaning under each ayah</div></div>
+        <button class="switch on" data-toggle="translation" type="button" aria-label="Show translation"></button>
+      </div>
+    </div>
+    <div class="set-group">
+      <h4>Experience</h4>
+      <div class="set-row">
+        <div><div class="lbl">Sound effects</div><div class="sub">Subtle click feedback</div></div>
+        <button class="switch" data-toggle="sound" type="button" aria-label="Sound effects"></button>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Compact cards</div><div class="sub">Tighter spacing across the site</div></div>
+        <button class="switch" data-toggle="compact" type="button" aria-label="Compact cards"></button>
+      </div>
+    </div>
+    <div class="set-group">
+      <h4>Data</h4>
+      <button class="menu-link" onclick="exportData()" type="button" style="padding-left:0"><svg><use href="#i-download"/></svg> Export my data (JSON)</button>
+      <button class="menu-link" onclick="resetData()" type="button" style="padding-left:0;color:#ef4444"><svg><use href="#i-trash"/></svg> Reset everything</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══════ SEARCH ═══════ -->
+<div class="overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg><use href="#i-search"/></svg>
+      <input id="searchInput" type="text" placeholder="Search surahs, skills, services…" autocomplete="off">
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- ═══════ MODAL · ENROLL ═══════ -->
+<div class="modal" id="enrollModal">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3>Enroll Now</h3>
+        <p id="enrollSub">Fill the form and we'll contact you to schedule your first class.</p>
+      </div>
+      <button class="modal-close" data-close type="button"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <div class="modal-body" id="enrollBody"></div>
+  </div>
+</div>
+
+<!-- ═══════ MODAL · RATE ═══════ -->
+<div class="modal" id="rateModal">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div><h3>Rate Your Experience</h3><p id="rateSub">Your feedback helps us improve.</p></div>
+      <button class="modal-close" data-close type="button"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <div class="modal-body" id="rateBody"></div>
+  </div>
+</div>
+
+<!-- ═══════ MODAL · ART DETAIL ═══════ -->
+<div class="modal" id="artModal">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box wide">
+    <div class="modal-head">
+      <div><h3 id="artTitle">Title</h3><p id="artSub">Subtitle</p></div>
+      <button class="modal-close" data-close type="button"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <div class="modal-body" id="artBody"></div>
+  </div>
+</div>
+
+<!-- ═══════ MODAL · SHARE ═══════ -->
+<div class="modal" id="shareModal">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div><h3>Share Al-Ma'rifah</h3><p>Invite a friend to learn with you.</p></div>
+      <button class="modal-close" data-close type="button"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="share-grid" id="shareGrid"></div>
+      <button class="btn btn-ghost" style="width:100%;margin-top:16px" onclick="copyLink()" type="button">
+        <svg><use href="#i-link"/></svg> Copy link
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ MODAL · CONTACT ═══════ -->
+<div class="modal" id="contactModal">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div><h3>Contact Us</h3><p>We reply quickly — by phone, WhatsApp or email.</p></div>
+      <button class="modal-close" data-close type="button"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <div class="modal-body" id="contactBody"></div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   AL-MA'RIFAH ACADEMY — APPLICATION SCRIPT
+   ═══════════════════════════════════════════════════════════ */
+(function(){
+'use strict';
+
+/* ---------- STORAGE ---------- */
+const DB = {
+  get(k, d){ try{ const v = localStorage.getItem('mrf_'+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('mrf_'+k, JSON.stringify(v)); }catch(e){} },
+  del(k){ try{ localStorage.removeItem('mrf_'+k); }catch(e){} }
+};
+
+/* ---------- STATE ---------- */
+const state = {
+  surah: 1,
+  rtab: 'read',
+  stars: DB.get('stars', []),
+  notes: DB.get('notes', []),
+  favSurahs: DB.get('favSurahs', []),
+  memo: DB.get('memo', {}),
+  enrollTrack: 'both',
+  rateTarget: 'quran',
+  rating: 0,
+  settings: DB.get('settings', {
+    theme:'dark', accent:'gold', motion:false, translation:true,
+    sound:false, compact:false, arSize:29
+  })
+};
+
+/* ---------- UTILS ---------- */
+const $ = id => document.getElementById(id);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+function escapeHTML(s){
+  return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* ---------- TOAST ---------- */
+const toastWrap = $('toasts');
+function toast(msg, type='ok', ms=3200){
+  const el = document.createElement('div');
+  el.className = 'toast '+type;
+  el.innerHTML = '<span class="toast-ico"><svg><use href="#i-check"/></svg></span><span>'+msg+'</span>';
+  toastWrap.appendChild(el);
+  if(state.settings.sound) beep();
+  setTimeout(()=>{ el.classList.add('out'); setTimeout(()=>el.remove(), 400); }, ms);
+}
+let ac;
+function beep(){
+  try{
+    ac = ac || new (window.AudioContext||window.webkitAudioContext)();
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.connect(g); g.connect(ac.destination);
+    o.frequency.value = 880; o.type='sine';
+    g.gain.setValueAtTime(0.0001, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.06, ac.currentTime+0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime+0.16);
+    o.start(); o.stop(ac.currentTime+0.18);
+  }catch(e){}
+}
+
+/* ---------- ART GENERATOR ---------- */
+const ICONS = {
+  book:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5A2.5 2.5 0 0 1 20 21.5z"/>',
+  mic:'<rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/>',
+  star:'<path d="M12 2.5l2.9 5.9 6.6 1-4.8 4.6 1.1 6.5L12 17.4 6.2 20.5l1.1-6.5L2.5 9.4l6.6-1z"/>',
+  scroll:'<path d="M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 0 2 2H8a2 2 0 0 1-2-2z"/><path d="M6 3a2 2 0 0 0-2 2v2h4"/><path d="M9 9h7M9 13h7"/>',
+  letters:'<path d="M4 20L10 4l6 16"/><path d="M6.5 15h7"/><path d="M18 20V9"/><path d="M18 9a2 2 0 1 0 0-3"/>',
+  doc:'<path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/><path d="M9 12h6M9 16h6"/>',
+  grid:'<rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/>',
+  slides:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/>',
+  form:'<rect x="3" y="4" width="18" height="4" rx="1.5"/><rect x="3" y="10" width="18" height="4" rx="1.5"/><rect x="3" y="16" width="11" height="4" rx="1.5"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  ai:'<circle cx="12" cy="12" r="3"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><path d="M6 7l3.2 3M18 7l-3.2 3M6 17l3.2-3M18 17l-3.2-3"/>',
+  palette:'<path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.9 2-1.8 0-1.4-1-1.7-1-2.7 0-.9.8-1.5 1.8-1.5H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/>',
+  pen:'<path d="M4 20h4L20 8l-4-4L4 16z"/><path d="M14 6l4 4"/>',
+  list:'<path d="M8 6h13M8 12h13M8 18h9"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/>',
+  layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/>',
+  check:'<path d="M4 12.5l5 5L20 6.5"/>',
+  play:'<path d="M6 4l14 8-14 8z"/>'
+};
+let artUid = 0;
+function art(kind, c1, c2){
+  const id = 'g'+(++artUid);
+  const p = ICONS[kind] || ICONS.book;
+  return '<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%">' +
+    '<defs>' +
+      '<linearGradient id="'+id+'" x1="0" y1="0" x2="1" y2="1">' +
+        '<stop offset="0" stop-color="'+c1+'"/><stop offset="1" stop-color="'+c2+'"/>' +
+      '</linearGradient>' +
+      '<radialGradient id="'+id+'r" cx="50%" cy="-10%" r="90%">' +
+        '<stop offset="0" stop-color="#ffffff" stop-opacity=".32"/>' +
+        '<stop offset="1" stop-color="#ffffff" stop-opacity="0"/>' +
+      '</radialGradient>' +
+    '</defs>' +
+    '<rect width="400" height="225" fill="url(#'+id+')"/>' +
+    '<rect width="400" height="225" fill="url(#'+id+'r)"/>' +
+    '<circle cx="335" cy="35" r="72" fill="#ffffff" opacity=".075"/>' +
+    '<circle cx="55" cy="200" r="88" fill="#ffffff" opacity=".065"/>' +
+    '<circle cx="200" cy="112" r="58" fill="#ffffff" opacity=".10"/>' +
+    '<g transform="translate(200,112) scale(3) translate(-12,-12)" fill="none" stroke="#ffffff" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" opacity=".96">'+p+'</g>' +
+  '</svg>';
+}
+
+/* ---------- QUR'AN DATA ---------- */
+const SURAHS = [
+[1,"Al-Fatihah","الفاتحة",7,"Meccan"],[2,"Al-Baqarah","البقرة",286,"Medinan"],
+[3,"Ali 'Imran","آل عمران",200,"Medinan"],[4,"An-Nisa","النساء",176,"Medinan"],
+[5,"Al-Ma'idah","المائدة",120,"Medinan"],[6,"Al-An'am","الأنعام",165,"Meccan"],
+[7,"Al-A'raf","الأعراف",206,"Meccan"],[8,"Al-Anfal","الأنفال",75,"Medinan"],
+[9,"At-Tawbah","التوبة",129,"Medinan"],[10,"Yunus","يونس",109,"Meccan"],
+[11,"Hud","هود",123,"Meccan"],[12,"Yusuf","يوسف",111,"Meccan"],
+[13,"Ar-Ra'd","الرعد",43,"Medinan"],[14,"Ibrahim","إبراهيم",52,"Meccan"],
+[15,"Al-Hijr","الحجر",99,"Meccan"],[16,"An-Nahl","النحل",128,"Meccan"],
+[17,"Al-Isra","الإسراء",111,"Meccan"],[18,"Al-Kahf","الكهف",110,"Meccan"],
+[19,"Maryam","مريم",98,"Meccan"],[20,"Ta-Ha","طه",135,"Meccan"],
+[21,"Al-Anbiya","الأنبياء",112,"Meccan"],[22,"Al-Hajj","الحج",78,"Medinan"],
+[23,"Al-Mu'minun","المؤمنون",118,"Meccan"],[24,"An-Nur","النور",64,"Medinan"],
+[25,"Al-Furqan","الفرقان",77,"Meccan"],[26,"Ash-Shu'ara","الشعراء",227,"Meccan"],
+[27,"An-Naml","النمل",93,"Meccan"],[28,"Al-Qasas","القصص",88,"Meccan"],
+[29,"Al-Ankabut","العنكبوت",69,"Meccan"],[30,"Ar-Rum","الروم",60,"Meccan"],
+[31,"Luqman","لقمان",34,"Meccan"],[32,"As-Sajdah","السجدة",30,"Meccan"],
+[33,"Al-Ahzab","الأحزاب",73,"Medinan"],[34,"Saba","سبأ",54,"Meccan"],
+[35,"Fatir","فاطر",45,"Meccan"],[36,"Ya-Sin","يس",83,"Meccan"],
+[37,"As-Saffat","الصافات",182,"Meccan"],[38,"Sad","ص",88,"Meccan"],
+[39,"Az-Zumar","الزمر",75,"Meccan"],[40,"Ghafir","غافر",85,"Meccan"],
+[41,"Fussilat","فصلت",54,"Meccan"],[42,"Ash-Shura","الشورى",53,"Meccan"],
+[43,"Az-Zukhruf","الزخرف",89,"Meccan"],[44,"Ad-Dukhan","الدخان",59,"Meccan"],
+[45,"Al-Jathiyah","الجاثية",37,"Meccan"],[46,"Al-Ahqaf","الأحقاف",35,"Meccan"],
+[47,"Muhammad","محمد",38,"Medinan"],[48,"Al-Fath","الفتح",29,"Medinan"],
+[49,"Al-Hujurat","الحجرات",18,"Medinan"],[50,"Qaf","ق",45,"Meccan"],
+[51,"Adh-Dhariyat","الذاريات",60,"Meccan"],[52,"At-Tur","الطور",49,"Meccan"],
+[53,"An-Najm","النجم",62,"Meccan"],[54,"Al-Qamar","القمر",55,"Meccan"],
+[55,"Ar-Rahman","الرحمن",78,"Medinan"],[56,"Al-Waqi'ah","الواقعة",96,"Meccan"],
+[57,"Al-Hadid","الحديد",29,"Medinan"],[58,"Al-Mujadila","المجادلة",22,"Medinan"],
+[59,"Al-Hashr","الحشر",24,"Medinan"],[60,"Al-Mumtahanah","الممتحنة",13,"Medinan"],
+[61,"As-Saff","الصف",14,"Medinan"],[62,"Al-Jumu'ah","الجمعة",11,"Medinan"],
+[63,"Al-Munafiqun","المنافقون",11,"Medinan"],[64,"At-Taghabun","التغابن",18,"Medinan"],
+[65,"At-Talaq","الطلاق",12,"Medinan"],[66,"At-Tahrim","التحريم",12,"Medinan"],
+[67,"Al-Mulk","الملك",30,"Meccan"],[68,"Al-Qalam","القلم",52,"Meccan"],
+[69,"Al-Haqqah","الحاقة",52,"Meccan"],[70,"Al-Ma'arij","المعارج",44,"Meccan"],
+[71,"Nuh","نوح",28,"Meccan"],[72,"Al-Jinn","الجن",28,"Meccan"],
+[73,"Al-Muzzammil","المزمل",20,"Meccan"],[74,"Al-Muddaththir","المدثر",56,"Meccan"],
+[75,"Al-Qiyamah","القيامة",40,"Meccan"],[76,"Al-Insan","الإنسان",31,"Medinan"],
+[77,"Al-Mursalat","المرسلات",50,"Meccan"],[78,"An-Naba","النبأ",40,"Meccan"],
+[79,"An-Nazi'at","النازعات",46,"Meccan"],[80,"Abasa","عبس",42,"Meccan"],
+[81,"At-Takwir","التكوير",29,"Meccan"],[82,"Al-Infitar","الإنفطار",19,"Meccan"],
+[83,"Al-Mutaffifin","المطففين",36,"Meccan"],[84,"Al-Inshiqaq","الإنشقاق",25,"Meccan"],
+[85,"Al-Buruj","البروج",22,"Meccan"],[86,"At-Tariq","الطارق",17,"Meccan"],
+[87,"Al-A'la","الأعلى",19,"Meccan"],[88,"Al-Ghashiyah","الغاشية",26,"Meccan"],
+[89,"Al-Fajr","الفجر",30,"Meccan"],[90,"Al-Balad","البلد",20,"Meccan"],
+[91,"Ash-Shams","الشمس",15,"Meccan"],[92,"Al-Layl","الليل",21,"Meccan"],
+[93,"Ad-Duha","الضحى",11,"Meccan"],[94,"Ash-Sharh","الشرح",8,"Meccan"],
+[95,"At-Tin","التين",8,"Meccan"],[96,"Al-Alaq","العلق",19,"Meccan"],
+[97,"Al-Qadr","القدر",5,"Meccan"],[98,"Al-Bayyinah","البينة",8,"Medinan"],
+[99,"Az-Zalzalah","الزلزلة",8,"Medinan"],[100,"Al-Adiyat","العاديات",11,"Meccan"],
+[101,"Al-Qari'ah","القارعة",11,"Meccan"],[102,"At-Takathur","التكاثر",8,"Meccan"],
+[103,"Al-Asr","العصر",3,"Meccan"],[104,"Al-Humazah","الهمزة",9,"Meccan"],
+[105,"Al-Fil","الفيل",5,"Meccan"],[106,"Quraysh","قريش",4,"Meccan"],
+[107,"Al-Ma'un","الماعون",7,"Meccan"],[108,"Al-Kawthar","الكوثر",3,"Meccan"],
+[109,"Al-Kafirun","الكافرون",6,"Meccan"],[110,"An-Nasr","النصر",3,"Medinan"],
+[111,"Al-Masad","المسد",5,"Meccan"],[112,"Al-Ikhlas","الإخلاص",4,"Meccan"],
+[113,"Al-Falaq","الفلق",5,"Meccan"],[114,"An-Nas","الناس",6,"Meccan"]
+];
+
+const SAMPLE = {
+  1:[
+    ["بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ","In the name of Allah, the Most Merciful, the Most Compassionate."],
+    ["الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ","All praise is due to Allah, Lord of the worlds."],
+    ["الرَّحْمَٰنِ الرَّحِيمِ","The Most Merciful, the Most Compassionate."],
+    ["مَالِكِ يَوْمِ الدِّينِ","Master of the Day of Judgement."],
+    ["إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ","You alone we worship, and You alone we ask for help."],
+    ["اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ","Guide us to the straight path."],
+    ["صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ","The path of those upon whom You have bestowed favour, not of those who earned anger, nor of those who went astray."]
+  ],
+  112:[
+    ["قُلْ هُوَ اللَّهُ أَحَدٌ","Say: He is Allah, the One."],
+    ["اللَّهُ الصَّمَدُ","Allah, the Eternal Refuge."],
+    ["لَمْ يَلِدْ وَلَمْ يُولَدْ","He neither begets nor is born."],
+    ["وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ","And there is none comparable to Him."]
+  ],
+  113:[
+    ["قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ","Say: I seek refuge in the Lord of the daybreak."],
+    ["مِن شَرِّ مَا خَلَقَ","From the evil of what He has created."],
+    ["وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ","And from the evil of the darkness when it settles."],
+    ["وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ","And from the evil of those who blow on knots."],
+    ["وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ","And from the evil of the envier when he envies."]
+  ],
+  114:[
+    ["قُلْ أَعُوذُ بِرَبِّ النَّاسِ","Say: I seek refuge in the Lord of mankind."],
+    ["مَلِكِ النَّاسِ","The Sovereign of mankind."],
+    ["إِلَٰهِ النَّاسِ","The God of mankind."],
+    ["مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ","From the evil of the retreating whisperer."],
+    ["الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ","Who whispers in the breasts of mankind."],
+    ["مِنَ الْجِنَّةِ وَالنَّاسِ","From among the jinn and mankind."]
+  ],
+  108:[
+    ["إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ","Indeed, We have granted you al-Kawthar."],
+    ["فَصَلِّ لِرَبِّكَ وَانْحَرْ","So pray to your Lord and sacrifice."],
+    ["إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ","Indeed, your hater — he is the one cut off."]
+  ],
+  103:[
+    ["وَالْعَصْرِ","By time."],
+    ["إِنَّ الْإِنسَانَ لَفِي خُسْرٍ","Indeed, mankind is in loss."],
+    ["إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ","Except those who believe and do righteous deeds, and advise one another to truth and patience."]
+  ]
+};
+
+/* ---------- CONTENT DATA ---------- */
+const QURAN_CLASSES = [
+  { k:'mic', c1:'#0e7a5f', c2:'#16b98a', t:'Tajweed & Makharij', s:'Correct articulation and beautiful recitation',
+    d:'Learn the precise points of articulation, the rules of Noon and Meem, Madd, Qalqalah and the etiquette of recitation — one rule at a time with live correction.',
+    b:['Point-by-point articulation practice','Rules of Noon Sakinah & Tanween','Madd, Qalqalah and Waqf','Live correction every session'] },
+  { k:'star', c1:'#0b6e5a', c2:'#22c99a', t:'Hifdh & Memorization', s:'A structured plan for lasting memorisation',
+    d:'A personalised memorisation schedule with daily targets, spaced revision cycles and progress tracking built right into this site.',
+    b:['Personal daily target plan','Spaced-repetition revision cycles','Weekly progress reviews','Memorisation tracker in the reader'] },
+  { k:'scroll', c1:'#0f5132', c2:'#2fa37a', t:'Tafsir & Meaning', s:'Understand what you recite',
+    d:"Explore the meanings, context of revelation and lessons of the Qur'an through classical and contemporary tafsir.",
+    b:['Word-by-word meaning','Context of revelation (Asbab)','Thematic study of surahs','Practical lessons for daily life'] },
+  { k:'letters', c1:'#7a5c10', c2:'#d9b53a', t:'Arabic Reading', s:'Read the Qur\'an with confidence',
+    d:"Start from the alphabet and build up to fluent Qur'anic reading — with handwriting, vocabulary and grammar basics.",
+    b:['Letters, vowels and joining','Vocabulary building','Basic grammar (Nahw & Sarf)','Reading fluency drills'] },
+  { k:'book', c1:'#0a5c56', c2:'#139e8e', t:'Recitation Correction', s:'One-to-one recitation polish',
+    d:"Read to a teacher and receive immediate, gentle correction — ideal for anyone returning to the Qur'an or preparing for an ijazah.",
+    b:['Individual recitation sessions','Immediate error correction','Fluency and confidence building','Preparation for ijazah'] },
+  { k:'layers', c1:'#1a6b6b', c2:'#2ea8a8', t:"Qur'anic Arabic", s:'The language of revelation',
+    d:"A bridge course connecting classical Arabic grammar directly to the vocabulary and structures of the Qur'an.",
+    b:['High-frequency Qur\'anic vocabulary','Sentence structure in the Qur\'an','Understanding without translation','Guided reading of selected ayat'] }
+];
+
+const COMPUTER_SKILLS = [
+  { k:'doc', c1:'#2b4fd0', c2:'#6f8bff', t:'Microsoft Word', s:'Professional documents',
+    d:'From basic typing to advanced formatting: styles, tables of contents, headers, references, mail merge and template design.',
+    b:['Styles & headings','Table of contents','Tables, images & captions','Mail merge & templates'] },
+  { k:'grid', c1:'#0f7a4a', c2:'#17b26a', t:'Microsoft Excel', s:'Data that works for you',
+    d:'Formulas, functions, sorting, filtering, pivot tables, charts and conditional formatting — built around real projects.',
+    b:['Formulas & functions','Sorting, filtering & validation','Pivot tables & charts','Conditional formatting'] },
+  { k:'slides', c1:'#b84a1f', c2:'#f97316', t:'PowerPoint', s:'Presentations that persuade',
+    d:'Design clean, professional slides with master layouts, animations, transitions and speaker notes.',
+    b:['Slide masters & layouts','Transitions & animations','Charts, SmartArt & media','Speaker notes & delivery'] },
+  { k:'form', c1:'#6d3fd6', c2:'#a06bfa', t:'Microsoft Forms', s:'Surveys and quizzes',
+    d:'Build forms, quizzes and surveys with branching, scoring, and automatic Excel export.',
+    b:['Question types & branching','Quizzes & auto-scoring','Sharing & responses','Excel export & analysis'] },
+  { k:'doc', c1:'#1a6fd4', c2:'#4a9bf5', t:'Google Docs', s:'Documents in the cloud',
+    d:'Collaborative writing, comments, suggestion mode, version history and template workflows.',
+    b:['Real-time collaboration','Comments & suggestions','Version history','Templates & add-ons'] },
+  { k:'form', c1:'#5b2fa8', c2:'#9b6bf5', t:'Google Forms', s:'Collect anything, anywhere',
+    d:'Create forms with sections, validation and response sheets — perfect for research and registration.',
+    b:['Sections & question logic','Response validation','Linked Google Sheets','Summary & charts'] },
+  { k:'mail', c1:'#b3261e', c2:'#ea4335', t:'Gmail', s:'Email that stays organised',
+    d:'Labels, filters, signatures, templates, scheduling and search operators to keep your inbox clean.',
+    b:['Labels & filters','Signatures & templates','Scheduled sending','Advanced search operators'] },
+  { k:'ai', c1:'#0b4f8a', c2:'#00b8d4', t:'Artificial Intelligence', s:'AI as your assistant',
+    d:'Practical use of AI tools for writing, research, summarising, translating, designing and automating everyday work.',
+    b:['Prompt writing skills','AI for research & writing','Summarising & translating','Ethics & verification'] }
+];
+
+const SERVICES = [
+  { k:'doc', c1:'#8a6d15', c2:'#d4af37', t:'PDF Book → Word', s:'Fully editable conversions',
+    d:'We convert any PDF book into a clean, fully editable Microsoft Word document with the original layout, images and pagination preserved.',
+    b:['Layout & pagination preserved','Images and tables retained','Editable text throughout','Optional proofreading'] },
+  { k:'layers', c1:'#0f5132', c2:'#2fa37a', t:'Research Formatting', s:'To your university guidelines',
+    d:"Poorly arranged pages, wide gaps or inconsistent styles? We reformat your paper to your institution's exact specifications.",
+    b:['Margin & spacing correction','Font and heading styles','Reference & citation formatting','Consistent page numbering'] },
+  { k:'book', c1:'#7a4a12', c2:'#c98b27', t:'Printed Book → Word', s:'From paper to digital',
+    d:'Have a physical book? We type and structure it into a professional Word document, ready for print or digital distribution.',
+    b:['Accurate typing of the full text','Chapter and section structure','Table of contents generated','Print-ready output'] },
+  { k:'list', c1:'#4a3a7a', c2:'#8a6bf0', t:'Indexes & Tables', s:'Navigable research',
+    d:'Table of contents, hadith index, names index, subject index and cross-references — inserted automatically and accurately.',
+    b:['Automatic table of contents','Hadith and names indexes','Subject & term indexes','Hyperlinked references'] },
+  { k:'pen', c1:'#8a3a2a', c2:'#e0704a', t:'Writing From Scratch', s:'Original academic writing',
+    d:'Complete research papers, essays and assignments written to academic standard, fully referenced and original.',
+    b:['Structured research papers','Proper academic referencing','Original, plagiarism-free','Revision rounds included'] },
+  { k:'check', c1:'#1f6b8a', c2:'#3fb0d4', t:'Review & Editing', s:'Polish every sentence',
+    d:'Full proofreading, language correction, structural review and careful rewriting of your existing work.',
+    b:['Grammar & spelling correction','Structural & logical review','Clarity and tone improvements','Tracked changes provided'] },
+  { k:'palette', c1:'#a8306b', c2:'#e062a0', t:'Design & Study Aids', s:'Beautiful learning materials',
+    d:'Logo design, study notes, revision cards, flashcards, posters and presentation decks — clean and modern.',
+    b:['Logo & brand design','Study notes & summaries','Revision cards & flashcards','Posters & slide decks'] },
+  { k:'globe', c1:'#2b4fd0', c2:'#6f8bff', t:'Any Computer Service', s:'Tell us what you need',
+    d:'Data entry, Excel sheets, mail merge, forms, formatting, file conversion and any other computer-related task.',
+    b:['Data entry & Excel work','Mail merge & bulk documents','File conversion & cleanup','Custom requests welcome'] }
+];
+
+/* Computer resources — all point to "Technology for Teachers and Students" YouTube channel */
+const YT_CHANNEL = 'https://www.youtube.com/@technologyforteachersandstudents';
+function ytSearch(q){ return YT_CHANNEL + '/search?query=' + encodeURIComponent(q); }
+
+const COMPUTER_RESOURCES = [
+  { t:'Microsoft Word Tutorials', s:'Full Word course from Technology for Teachers and Students', url: ytSearch('microsoft word'), k:'doc', c1:'#2b4fd0', c2:'#6f8bff' },
+  { t:'Microsoft Excel Tutorials', s:'Formulas, functions, pivot tables & charts', url: ytSearch('excel'), k:'grid', c1:'#0f7a4a', c2:'#17b26a' },
+  { t:'PowerPoint Tutorials', s:'Design, animation & presentation skills', url: ytSearch('powerpoint'), k:'slides', c1:'#b84a1f', c2:'#f97316' },
+  { t:'Google Docs & Forms', s:'Cloud documents and forms', url: ytSearch('google docs'), k:'form', c1:'#5b2fa8', c2:'#9b6bf5' },
+  { t:'Gmail Tutorials', s:'Organise your inbox like a pro', url: ytSearch('gmail'), k:'mail', c1:'#b3261e', c2:'#ea4335' },
+  { t:'AI for Beginners', s:'Practical AI skills for everyday work', url: ytSearch('artificial intelligence'), k:'ai', c1:'#0b4f8a', c2:'#00b8d4' }
+];
+
+const QURAN_RESOURCES = [
+  { t:'Quran.com', s:"Read, listen and study the Qur'an", url:'https://quran.com', k:'book', c1:'#0e7a5f', c2:'#16b98a' },
+  { t:'Tafsir Ibn Kathir', s:'Classical tafsir in English', url:'https://quran.com/tafsirs', k:'scroll', c1:'#0f5132', c2:'#2fa37a' },
+  { t:'Qari Mishary Alafasy', s:'Beautiful recitation on YouTube', url:'https://www.youtube.com/results?search_query=mishary+alafasy+quran', k:'mic', c1:'#0a5c56', c2:'#139e8e' },
+  { t:'Tajweed Rules', s:'Learn tajweed step by step', url:'https://www.youtube.com/results?search_query=tajweed+rules+for+beginners', k:'star', c1:'#7a5c10', c2:'#d9b53a' },
+  { t:"Qur'anic Arabic", s:"Arabic grammar for the Qur'an", url:'https://www.youtube.com/results?search_query=quranic+arabic+course', k:'letters', c1:'#1a6b6b', c2:'#2ea8a8' },
+  { t:'Hifdh Techniques', s:'Memorisation methods that work', url:'https://www.youtube.com/results?search_query=how+to+memorize+quran', k:'layers', c1:'#0b6e5a', c2:'#22c99a' }
+];
+
+const COMPUTER_PATH = [
+  { t:'01 · Foundations', s:'Comfort with the computer',
+    d:'Files and folders, keyboard shortcuts, browsing safely, and setting up your accounts for Microsoft and Google.',
+    list:['File management','Keyboard shortcuts','Safe browsing','Account setup'] },
+  { t:'02 · Documents & Data', s:'Word, Excel & Docs',
+    d:'Produce clean documents, build working spreadsheets and collaborate on shared files in the cloud.',
+    list:['Word & Google Docs','Excel & Sheets','Formatting & formulas','Cloud collaboration'] },
+  { t:'03 · Presentation & Automation', s:'PowerPoint, Forms & AI',
+    d:'Design persuasive slides, collect data with forms and use AI to speed up everyday work.',
+    list:['PowerPoint design','Microsoft & Google Forms','AI prompting','Workflow automation'] }
+];
+
+/* ---------- RENDER · CARDS ---------- */
+function cardHTML(item, idx, group){
+  return '<article class="card" data-group="'+group+'" data-idx="'+idx+'">' +
+    '<div class="card-hover-tip"><svg><use href="#i-info"/></svg></div>' +
+    '<div class="card-art">'+art(item.k, item.c1, item.c2)+'</div>' +
+    '<div class="card-body">' +
+      '<h3>'+item.t+'</h3>' +
+      '<p>'+item.s+'</p>' +
+      '<div class="card-tags">'+(item.b||[]).slice(0,3).map(x=>'<span class="tag">'+x+'</span>').join('')+'</div>' +
+    '</div>' +
+  '</article>';
+}
+
+function resourceHTML(r){
+  return '<a class="card" href="'+r.url+'" target="_blank" rel="noopener">' +
+    '<div class="card-hover-tip"><svg><use href="#i-play"/></svg></div>' +
+    '<div class="card-art">'+art(r.k, r.c1, r.c2)+'</div>' +
+    '<div class="card-body"><h3 style="font-size:20px">'+r.t+'</h3><p>'+r.s+'</p></div>' +
+  '</a>';
+}
+
+/* Fill containers */
+$('quranClasses').innerHTML    = QURAN_CLASSES.map((x,i)=>cardHTML(x,i,'quran')).join('');
+$('computerSkills').innerHTML  = COMPUTER_SKILLS.map((x,i)=>cardHTML(x,i,'computer')).join('');
+$('serviceCards').innerHTML    = SERVICES.map((x,i)=>cardHTML(x,i,'services')).join('');
+$('quranResources').innerHTML  = QURAN_RESOURCES.map(resourceHTML).join('');
+$('computerResources').innerHTML = COMPUTER_RESOURCES.map(resourceHTML).join('');
+$('computerPath').innerHTML = COMPUTER_PATH.map(p=>(
+  '<div class="card" style="cursor:default">' +
+    '<div class="card-body">' +
+      '<div style="font-size:10.5px;letter-spacing:.28em;color:var(--accent);font-weight:600">'+p.t+'</div>' +
+      '<h3 style="font-size:21px;margin-top:8px">'+p.s+'</h3>' +
+      '<p>'+p.d+'</p>' +
+      '<ul class="art-list" style="margin-top:14px">'+p.list.map(l=>'<li>'+l+'</li>').join('')+'</ul>' +
+    '</div>' +
+  '</div>'
+)).join('');
+
+/* Home quick-access art */
+$('qa-art1').innerHTML = art('ai','#2b4fd0','#6f8bff');
+$('qa-art2').innerHTML = art('book','#0e7a5f','#16b98a');
+$('qa-art3').innerHTML = art('doc','#8a6d15','#d4af37');
+$('qa-art4').innerHTML = art('star','#6d3fd6','#a06bfa');
+
+/* ---------- CARD CLICK → ART MODAL ---------- */
+document.addEventListener('click', function(e){
+  const card = e.target.closest('.card[data-group]');
+  if(!card) return;
+  const map = { quran:QURAN_CLASSES, computer:COMPUTER_SKILLS, services:SERVICES };
+  const item = map[card.dataset.group][+card.dataset.idx];
+  if(!item) return;
+  openArt(item);
+});
+
+function openArt(item){
+  $('artTitle').textContent = item.t;
+  $('artSub').textContent = item.s;
+  const trackForEnroll = item.k==='ai'||item.k==='grid'||item.k==='slides'||item.k==='form'||item.k==='mail'
+    ? 'computer' : 'quran';
+  $('artBody').innerHTML =
+    '<div class="art-hero">'+art(item.k, item.c1, item.c2)+'</div>' +
+    '<p style="font-size:14.5px;color:var(--text-2);line-height:1.75;font-weight:300">'+item.d+'</p>' +
+    '<ul class="art-list">'+(item.b||[]).map(b=>'<li>'+b+'</li>').join('')+'</ul>' +
+    '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">' +
+      '<button class="btn btn-primary" type="button" onclick="closeModal(\'artModal\');openEnroll(\''+trackForEnroll+'\')"><svg><use href="#i-user"/></svg> Enroll in this</button>' +
+      '<button class="btn btn-ghost" type="button" onclick="closeModal(\'artModal\');openShare()"><svg><use href="#i-share"/></svg> Share</button>' +
+    '</div>';
+  openModal('artModal');
+}
+
+/* ---------- MODAL HELPERS ---------- */
+function openModal(id){ $(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id){ $(id).classList.remove('open'); document.body.style.overflow=''; }
+window.closeModal = closeModal;
+$$('.modal').forEach(m=>{
+  m.addEventListener('click', e=>{ if(e.target.hasAttribute('data-close')) closeModal(m.id); });
+});
+
+/* ---------- COUNTRIES ---------- */
+const COUNTRIES = ['Afghanistan','Albania','Algeria','Angola','Argentina','Australia','Austria','Bahrain','Bangladesh','Belgium','Benin','Brazil','Cameroon','Canada','Chad','China','Comoros',"Côte d'Ivoire",'Denmark','Djibouti','Egypt','Eritrea','Ethiopia','France','Gabon','Gambia','Germany','Ghana','Guinea','India','Indonesia','Iraq','Ireland','Italy','Japan','Jordan','Kenya','Kuwait','Lebanon','Liberia','Libya','Malaysia','Mali','Mauritania','Morocco','Mozambique','Niger','Nigeria','Norway','Oman','Pakistan','Palestine','Philippines','Qatar','Russia','Rwanda','Saudi Arabia','Senegal','Sierra Leone','Somalia','South Africa','Spain','Sudan','Sweden','Switzerland','Syria','Tanzania','Tunisia','Turkey','Uganda','United Arab Emirates','United Kingdom','United States','Yemen','Zambia','Zimbabwe'];
+const COUNTRY_OPTS = COUNTRIES.map(c=>'<option value="'+c+'">').join('');
+
+/* ---------- ENROLL ---------- */
+const ENROLL_EMAIL = 'Muhammadbasiru125g@gmail.com';
+
+function openEnroll(track){
+  state.enrollTrack = track || 'both';
+  const labels = { quran:"Qur'an Track", computer:'Computer Track', services:'Services', both:'Both Tracks' };
+  $('enrollSub').textContent = 'Enrolling in: ' + labels[state.enrollTrack];
+
+  $('enrollBody').innerHTML =
+    '<form id="enrollForm" novalidate>' +
+      '<div class="field">' +
+        '<label>I want to enroll in</label>' +
+        '<div class="seg" id="trackSeg">' +
+          '<button type="button" data-track="quran">Qur\'an Track</button>' +
+          '<button type="button" data-track="computer">Computer Track</button>' +
+          '<button type="button" data-track="both">Both Tracks</button>' +
+          '<button type="button" data-track="services">Services</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="row-2">' +
+        '<div class="field" id="f-first"><label>First name *</label><input type="text" id="in-first" placeholder="e.g. Muhammad" autocomplete="given-name"><div class="msg">Please enter your first name.</div></div>' +
+        '<div class="field" id="f-last"><label>Surname *</label><input type="text" id="in-last" placeholder="e.g. Basiru" autocomplete="family-name"><div class="msg">Please enter your surname.</div></div>' +
+      '</div>' +
+      '<div class="row-2">' +
+        '<div class="field" id="f-dob"><label>Date of birth *</label><input type="date" id="in-dob"><div class="msg">Please enter your date of birth.</div></div>' +
+        '<div class="field" id="f-gender"><label>Gender *</label><select id="in-gender"><option value="">Select…</option><option>Male</option><option>Female</option></select><div class="msg">Please select your gender.</div></div>' +
+      '</div>' +
+      '<div class="field" id="f-email"><label>Email address *</label><input type="email" id="in-email" placeholder="you@example.com" autocomplete="email"><div class="msg">Please enter a valid email.</div></div>' +
+      '<div class="row-2">' +
+        '<div class="field" id="f-origin"><label>Country of origin *</label><input type="text" id="in-origin" list="countryList" placeholder="Start typing…"><datalist id="countryList">'+COUNTRY_OPTS+'</datalist><div class="msg">Please enter your country of origin.</div></div>' +
+        '<div class="field" id="f-residence"><label>Country of residence *</label><input type="text" id="in-residence" list="countryList" placeholder="Start typing…"><div class="msg">Please enter your country of residence.</div></div>' +
+      '</div>' +
+      '<div class="row-2">' +
+        '<div class="field"><label>Qur\'an experience level</label><select id="in-qlevel"><option>None — complete beginner</option><option>Beginner — knows the alphabet</option><option>Intermediate — reads with mistakes</option><option>Advanced — fluent reciter</option><option>Hafiz / Hafiza</option></select></div>' +
+        '<div class="field"><label>Computer skill level</label><select id="in-clevel"><option>None — complete beginner</option><option>Beginner — basic typing</option><option>Intermediate — comfortable with Office</option><option>Advanced — advanced user</option></select></div>' +
+      '</div>' +
+      '<div class="field"><label>Anything else we should know? (optional)</label><textarea id="in-msg" placeholder="Preferred times, goals, special requests…"></textarea></div>' +
+      '<button type="submit" class="btn btn-primary" id="enrollSubmitBtn" style="width:100%;margin-top:8px"><svg><use href="#i-check"/></svg> Register Now</button>' +
+      '<p style="font-size:11.5px;color:var(--muted);text-align:center;margin-top:14px;font-weight:300">Your details are sent to our team by email. We\'ll reply within 24 hours.</p>' +
+    '</form>';
+
+  const seg = $('trackSeg');
+  seg.querySelectorAll('button').forEach(function(b){
+    if(b.dataset.track === state.enrollTrack) b.classList.add('on');
+    b.addEventListener('click', function(){
+      seg.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      state.enrollTrack = b.dataset.track;
+    });
+  });
+
+  $('enrollForm').addEventListener('submit', submitEnroll);
+  openModal('enrollModal');
+}
+window.openEnroll = openEnroll;
+
+function setErr(id, on){ $(id).classList.toggle('err', on); }
+
+async function submitEnroll(e){
+  e.preventDefault();
+  const v = id => $(id).value.trim();
+  let ok = true;
+  const first = v('in-first'), last = v('in-last'), dob = v('in-dob');
+  const gender = v('in-gender'), email = v('in-email');
+  const origin = v('in-origin'), residence = v('in-residence');
+  const qlevel = v('in-qlevel'), clevel = v('in-clevel'), msg = v('in-msg');
+
+  setErr('f-first', !first);      if(!first) ok=false;
+  setErr('f-last', !last);        if(!last) ok=false;
+  setErr('f-dob', !dob);          if(!dob) ok=false;
+  setErr('f-gender', !gender);    if(!gender) ok=false;
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  setErr('f-email', !emailOk);    if(!emailOk) ok=false;
+  setErr('f-origin', !origin);    if(!origin) ok=false;
+  setErr('f-residence', !residence); if(!residence) ok=false;
+
+  if(!ok){ toast('Please complete the highlighted fields.', 'err'); return; }
+
+  const btn = $('enrollSubmitBtn');
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Sending…';
+
+  const trackLabel = { quran:"Qur'an Track", computer:'Computer Track', both:'Both Tracks', services:'Services' }[state.enrollTrack];
+
+  const payload = {
+    _subject: 'New Enrollment — ' + first + ' ' + last,
+    _template: 'table',
+    _captcha: 'false',
+    'Full Name': first + ' ' + last,
+    'Email': email,
+    'Date of Birth': dob,
+    'Gender': gender,
+    'Country of Origin': origin,
+    'Country of Residence': residence,
+    'Track': trackLabel,
+    "Qur'an Level": qlevel,
+    'Computer Level': clevel,
+    'Message': msg || '(none)',
+    'Submitted At': new Date().toLocaleString()
+  };
+
+  /* Save locally as backup */
+  const all = DB.get('registrations', []);
+  all.push({ first, last, dob, gender, email, origin, residence, track: state.enrollTrack, qlevel, clevel, msg, ts: Date.now() });
+  DB.set('registrations', all);
+
+  /* Send via FormSubmit.co (delivers to Gmail) */
+  let emailSent = false;
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/' + ENROLL_EMAIL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if(res.ok){
+      const data = await res.json().catch(()=>({}));
+      emailSent = true;
+    }
+  } catch(err){ /* offline or blocked — saved locally anyway */ }
+
+  /* Show success */
+  $('enrollBody').innerHTML =
+    '<div class="success">' +
+      '<div class="success-ring"><svg><use href="#i-check"/></svg></div>' +
+      '<h3>Registration Successful</h3>' +
+      '<p>Thank you, <strong>'+escapeHTML(first)+'</strong>. Your enrollment for the <strong>'+trackLabel+'</strong> has been received. We\'ll reach out to <strong>'+escapeHTML(email)+'</strong> shortly to schedule your first session.</p>' +
+      (emailSent
+        ? '<p class="note">✅ A copy of your registration has been sent to our team.</p>'
+        : '<p class="note">📩 Your details are saved. If you don\'t hear from us within 24 hours, please email <a href="mailto:'+ENROLL_EMAIL+'" style="color:var(--accent)">'+ENROLL_EMAIL+'</a> or use the contact button below.</p>') +
+      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px">' +
+        '<button class="btn btn-primary" type="button" onclick="closeModal(\'enrollModal\');showView(\'home\')">Done</button>' +
+        '<button class="btn btn-ghost" type="button" onclick="closeModal(\'enrollModal\');openContact()"><svg><use href="#i-phone"/></svg> Contact Us</button>' +
+        '<button class="btn btn-ghost" type="button" onclick="closeModal(\'enrollModal\');openShare()"><svg><use href="#i-share"/></svg> Tell a friend</button>' +
+      '</div>' +
+    '</div>';
+
+  toast('Registered successfully — welcome to Al-Ma\'rifah!', 'ok', 4200);
+  confetti();
+}
+
+/* ---------- RATE ---------- */
+function openRate(target){
+  state.rateTarget = target || 'quran';
+  state.rating = 0;
+  const labels = { quran:"Qur'an Track", computer:'Computer Track', services:'Our Services' };
+  $('rateSub').textContent = 'Rating: ' + labels[state.rateTarget];
+
+  $('rateBody').innerHTML =
+    '<p style="text-align:center;font-size:14px;color:var(--muted);font-weight:300">How would you rate your experience so far?</p>' +
+    '<div class="stars" id="starRow">' +
+      [1,2,3,4,5].map(i=>'<button class="star-btn" type="button" data-star="'+i+'" aria-label="'+i+' star"><svg><use href="#i-star"/></svg></button>').join('') +
+    '</div>' +
+    '<p id="rateLabel" style="text-align:center;font-size:13px;color:var(--accent);font-weight:600;height:20px"></p>' +
+    '<div class="field" style="margin-top:16px"><label>Your comment (optional)</label><textarea id="rateComment" placeholder="Tell us what you loved or what we can improve…"></textarea></div>' +
+    '<button class="btn btn-primary" type="button" style="width:100%" onclick="submitRate()"><svg><use href="#i-star"/></svg> Submit Rating</button>';
+
+  $$('#starRow .star-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      state.rating = +b.dataset.star;
+      $$('#starRow .star-btn').forEach(function(x){ x.classList.toggle('on', +x.dataset.star <= state.rating); });
+      const words = ['','Poor','Fair','Good','Very good','Excellent'];
+      $('rateLabel').textContent = words[state.rating];
+    });
+  });
+
+  openModal('rateModal');
+}
+window.openRate = openRate;
+
+function submitRate(){
+  if(!state.rating){ toast('Please select a star rating first.', 'err'); return; }
+  const all = DB.get('ratings', []);
+  all.push({ target: state.rateTarget, stars: state.rating, comment: ($('rateComment').value||'').trim(), ts: Date.now() });
+  DB.set('ratings', all);
+
+  $('rateBody').innerHTML =
+    '<div class="success">' +
+      '<div class="success-ring"><svg><use href="#i-star"/></svg></div>' +
+      '<h3>Thank You!</h3>' +
+      '<p>Your '+state.rating+'-star rating has been saved. We appreciate you taking the time to share your feedback.</p>' +
+      '<button class="btn btn-primary" type="button" style="margin-top:22px" onclick="closeModal(\'rateModal\')">Close</button>' +
+    '</div>';
+  toast('Rating submitted — thank you!', 'ok');
+}
+window.submitRate = submitRate;
+
+/* ---------- QUR'AN READER ---------- */
+const surahSelect = $('surahSelect');
+surahSelect.innerHTML = SURAHS.map(s=>'<option value="'+s[0]+'">'+s[0]+'. '+s[1]+' — '+s[2]+'</option>').join('');
+surahSelect.addEventListener('change', function(){
+  state.surah = +surahSelect.value; state.rtab='read';
+  syncTabs(); renderReader();
+});
+
+function syncTabs(){
+  $$('.rtab').forEach(t=>t.classList.toggle('active', t.dataset.rtab===state.rtab));
+}
+$('readerTabs').addEventListener('click', function(e){
+  const b = e.target.closest('.rtab'); if(!b) return;
+  state.rtab = b.dataset.rtab; syncTabs(); renderReader();
+});
+
+function getSurah(n){ return SURAHS.find(s=>s[0]===n) || SURAHS[0]; }
+
+function renderReader(){
+  const body = $('readerBody');
+  const s = getSurah(state.surah);
+  if(state.rtab === 'read'){ renderRead(body, s); return; }
+  if(state.rtab === 'review'){ renderReview(body, s); return; }
+  if(state.rtab === 'memo'){ renderMemo(body); return; }
+  if(state.rtab === 'notes'){ renderNotes(body); return; }
+  if(state.rtab === 'starred'){ renderStarred(body); return; }
+  if(state.rtab === 'favsurah'){ renderFavSurah(body); return; }
+}
+
+function ayahKey(s,a){ return s+':'+a; }
+
+function ayahHTML(surah, num, ar, tr){
+  const key = ayahKey(surah, num);
+  const starred = state.stars.includes(key);
+  const noted = state.notes.some(n=>n.surah===surah && n.ayah===num);
+  return '<div class="ayah">' +
+    '<div class="ayah-top">' +
+      '<span class="ayah-num">'+num+'</span>' +
+      '<div class="ayah-actions">' +
+        '<button type="button" data-act="star" data-key="'+key+'" data-s="'+surah+'" data-a="'+num+'" class="'+(starred?'on':'')+'" title="Star"><svg><use href="#i-star"/></svg></button>' +
+        '<button type="button" data-act="note" data-key="'+key+'" data-s="'+surah+'" data-a="'+num+'" class="'+(noted?'on':'')+'" title="Note"><svg><use href="#i-note"/></svg></button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="ayah-ar">'+ar+'</div>' +
+    '<div class="ayah-tr">'+tr+'</div>' +
+  '</div>';
+}
+
+function surahHeaderHTML(s){
+  return '<div class="surah-head">' +
+    '<div class="ar">'+s[2]+'</div>' +
+    '<div class="en">'+s[1]+'</div>' +
+    '<div class="meta">Surah '+s[0]+' · '+s[3]+' Ayat · '+s[4]+'</div>' +
+  '</div>';
+}
+
+function renderRead(body, s){
+  body.innerHTML = surahHeaderHTML(s) + '<div id="ayahList" style="text-align:center;padding:40px;color:var(--muted)">Loading…</div>';
+  const list = $('ayahList');
+
+  if(SAMPLE[s[0]]){
+    list.innerHTML = SAMPLE[s[0]].map((a,i)=>ayahHTML(s[0], i+1, a[0], a[1])).join('');
+    bindAyahActions();
+    return;
+  }
+
+  fetch('https://api.alquran.cloud/v1/surah/'+s[0]+'/editions/quran-uthmani,en.asad')
+    .then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    .then(data=>{
+      const arEd = data.data.find(e=>e.edition.identifier==='quran-uthmani') || data.data[0];
+      const enEd = data.data.find(e=>e.edition.identifier==='en.asad') || data.data[1] || null;
+      list.innerHTML = arEd.ayahs.map((a,i)=>{
+        const tr = enEd && enEd.ayahs[i] ? enEd.ayahs[i].text : '';
+        return ayahHTML(s[0], a.numberInSurah, a.text, tr);
+      }).join('');
+      bindAyahActions();
+    })
+    .catch(function(){
+      list.innerHTML = '<div class="empty">' +
+        '<svg><use href="#i-info"/></svg>' +
+        '<p style="max-width:420px;margin:0 auto">Surah text for <strong>'+s[1]+'</strong> needs an internet connection to load.<br>Try opening <a href="https://quran.com/'+s[0]+'" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">quran.com/'+s[0]+'</a> — or connect to the internet and reload.</p>' +
+      '</div>';
+    });
+}
+
+function bindAyahActions(){
+  $$('.ayah-actions button').forEach(function(b){
+    b.addEventListener('click', function(){
+      const act = b.dataset.act, sn = +b.dataset.s, an = +b.dataset.a, key = b.dataset.key;
+      if(act === 'star'){
+        const i = state.stars.indexOf(key);
+        if(i > -1) state.stars.splice(i,1); else state.stars.push(key);
+        DB.set('stars', state.stars);
+        b.classList.toggle('on');
+        toast(i>-1 ? 'Removed from starred ayat' : 'Added to starred ayat', 'info', 1800);
+      }
+      if(act === 'note'){
+        const existing = state.notes.find(n=>n.surah===sn && n.ayah===an);
+        const text = prompt(existing ? 'Edit your note:' : 'Write your note for this ayah:', existing ? existing.text : '');
+        if(text === null) return;
+        if(existing){ existing.text = text; existing.ts = Date.now(); }
+        else state.notes.push({ surah:sn, ayah:an, text: text, ts:Date.now() });
+        DB.set('notes', state.notes);
+        b.classList.toggle('on', !!text.trim());
+        toast('Note saved', 'ok', 1800);
+      }
+    });
+  });
+}
+
+function renderReview(body, s){
+  const total = s[3];
+  const done = state.stars.filter(k=>k.startsWith(s[0]+':')).length;
+  body.innerHTML = surahHeaderHTML(s) +
+    '<div class="mini-card"><h4>Review this surah</h4><p>'+s[1]+' has <strong>'+total+'</strong> ayat. You have starred <strong>'+done+'</strong> of them for review.</p><div class="progress-line"><i style="width:'+(total?Math.round(done/total*100):0)+'%"></i></div></div>' +
+    '<div class="mini-card"><h4>How to review effectively</h4><p>Read the ayah aloud three times while looking, twice while looking away, then once more to confirm. Star any ayah that feels shaky so it appears in your Starred list.</p></div>' +
+    '<div class="mini-card"><h4>Quick actions</h4><p style="margin-bottom:12px">Jump straight to the areas that need attention.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ghost btn-sm" type="button" onclick="setTab(\'starred\')">View starred ayat</button><button class="btn btn-ghost btn-sm" type="button" onclick="readerRandom()">Random surah</button><button class="btn btn-ghost btn-sm" type="button" onclick="setTab(\'memo\')">Memorisation tracker</button></div></div>';
+}
+
+function renderMemo(body){
+  body.innerHTML =
+    '<div class="mini-card" style="margin-bottom:16px"><h4>Memorisation Tracker</h4><p>Tick a surah once you have memorised it. Your progress is saved on this device.</p><div class="progress-line"><i style="width:'+Math.round(Object.keys(state.memo).length/114*100)+'%"></i></div><p style="margin-top:10px;font-size:12px">'+Object.keys(state.memo).length+' of 114 surahs memorised</p></div>' +
+    SURAHS.map(s=>'<div class="memo-row '+(state.memo[s[0]]?'done':'')+'" data-memo="'+s[0]+'"><div class="memo-check"><svg><use href="#i-check"/></svg></div><span class="memo-name">'+s[0]+'. '+s[1]+'</span><span class="memo-meta">'+s[3]+' ayat</span></div>').join('');
+  $$('.memo-row').forEach(function(r){
+    r.addEventListener('click', function(){
+      const n = r.dataset.memo;
+      if(state.memo[n]) delete state.memo[n]; else state.memo[n] = true;
+      DB.set('memo', state.memo);
+      r.classList.toggle('done');
+      toast(state.memo[n] ? 'Surah marked as memorised' : 'Surah unmarked', 'info', 1600);
+    });
+  });
+}
+
+function renderNotes(body){
+  if(!state.notes.length){
+    body.innerHTML = '<div class="empty"><svg><use href="#i-note"/></svg><p>You haven\'t written any notes yet.<br>Open a surah and tap the pen icon next to an ayah.</p></div>';
+    return;
+  }
+  body.innerHTML = state.notes.slice().sort((a,b)=>b.ts-a.ts).map(function(n){
+    const s = getSurah(n.surah);
+    return '<div class="mini-card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600">'+s[1]+' · Ayah '+n.ayah+'</span><button type="button" style="margin-left:auto;color:#ef4444" onclick="deleteNote('+n.surah+','+n.ayah+')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-trash"/></svg></button></div><p>'+(escapeHTML(n.text) || '<em style="color:var(--muted)">Empty note</em>')+'</p></div>';
+  }).join('');
+}
+
+function deleteNote(s,a){
+  state.notes = state.notes.filter(n=>!(n.surah===s && n.ayah===a));
+  DB.set('notes', state.notes);
+  renderReader();
+  toast('Note deleted', 'info', 1600);
+}
+window.deleteNote = deleteNote;
+
+function renderStarred(body){
+  if(!state.stars.length){
+    body.innerHTML = '<div class="empty"><svg><use href="#i-star"/></svg><p>No starred ayat yet.<br>Tap the star icon beside any ayah to save it here.</p></div>';
+    return;
+  }
+  body.innerHTML = state.stars.map(function(k){
+    const parts = k.split(':'); const s = +parts[0], a = +parts[1];
+    const surah = getSurah(s);
+    return '<div class="mini-card" style="display:flex;align-items:center;gap:14px"><div style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--surface-3);color:var(--accent);flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></div><div><div style="font-size:13.5px;font-weight:600">'+surah[1]+' · Ayah '+a+'</div><div style="font-size:11.5px;color:var(--muted)">Surah '+s+'</div></div><button class="btn btn-ghost btn-sm" type="button" style="margin-left:auto" onclick="jumpTo('+s+','+a+')">Open</button></div>';
+  }).join('');
+}
+
+function renderFavSurah(body){
+  body.innerHTML = '<div class="mini-card" style="margin-bottom:16px"><h4>Favorite Surahs</h4><p>Tap a surah below to mark it as a favourite, or open it to read.</p></div>' +
+    SURAHS.map(function(s){
+      const fav = state.favSurahs.includes(s[0]);
+      return '<div class="memo-row '+(fav?'done':'')+'" data-fav="'+s[0]+'"><div class="memo-check" style="border-radius:50%"><svg><use href="#i-heart"/></svg></div><span class="memo-name">'+s[0]+'. '+s[1]+'</span><span class="memo-meta">'+s[4]+'</span></div>';
+    }).join('');
+  $$('.memo-row').forEach(function(r){
+    r.addEventListener('click', function(){
+      const n = +r.dataset.fav;
+      const i = state.favSurahs.indexOf(n);
+      if(i>-1) state.favSurahs.splice(i,1); else state.favSurahs.push(n);
+      DB.set('favSurahs', state.favSurahs);
+      r.classList.toggle('done');
+      toast(i>-1 ? 'Removed from favourites' : 'Added to favourite surahs', 'info', 1600);
+    });
+  });
+}
+
+function setTab(t){ state.rtab = t; syncTabs(); renderReader(); }
+window.setTab = setTab;
+
+function jumpTo(s,a){
+  state.surah = s; state.rtab='read';
+  surahSelect.value = s;
+  syncTabs(); renderReader();
+  toast('Opened '+getSurah(s)[1]+' · Ayah '+a, 'info', 1800);
+}
+window.jumpTo = jumpTo;
+
+function readerRandom(){
+  const n = Math.floor(Math.random()*114)+1;
+  state.surah = n; state.rtab='read';
+  surahSelect.value = n;
+  syncTabs(); renderReader();
+}
+window.readerRandom = readerRandom;
+
+/* ---------- VIEW SWITCHING ---------- */
+function showView(name){
+  $$('.view').forEach(v=>v.classList.toggle('active', v.id==='view-'+name));
+  $$('.nav-links [data-view]').forEach(b=>b.classList.toggle('active', b.dataset.view===name));
+  window.scrollTo({top:0, behavior:'smooth'});
+  closeDrawer('menuDrawer');
+}
+window.showView = showView;
+
+/* ---------- SETTINGS ---------- */
+function applySettings(){
+  const s = state.settings;
+  document.documentElement.setAttribute('data-theme', s.theme);
+  document.documentElement.setAttribute('data-accent', s.accent);
+  document.documentElement.setAttribute('data-motion', s.motion ? 'reduced' : 'full');
+  document.documentElement.style.setProperty('--ar-size', s.arSize+'px');
+  document.documentElement.style.setProperty('--tr-display', s.translation ? 'block' : 'none');
+  document.body.style.setProperty('--fs', s.compact ? '15px' : '16px');
+
+  $('themeBtn').innerHTML = s.theme === 'dark'
+    ? '<svg><use href="#i-moon"/></svg>' : '<svg><use href="#i-sun"/></svg>';
+
+  const label = $('arSizeLabel');
+  if(label) label.textContent = s.arSize;
+
+  $$('[data-toggle]').forEach(t=>t.classList.toggle('on', !!s[t.dataset.toggle]));
+  $$('[data-theme-set]').forEach(b=>b.classList.toggle('on', b.dataset.themeSet===s.theme));
+  $$('[data-accent-set]').forEach(b=>b.classList.toggle('on', b.dataset.accentSet===s.accent));
+  DB.set('settings', s);
+}
+
+function toggleTheme(){
+  state.settings.theme = state.settings.theme === 'dark' ? 'light' : 'dark';
+  applySettings();
+  toast(state.settings.theme === 'dark' ? 'Dark mode on' : 'Light mode on', 'info', 1600);
+}
+window.toggleTheme = toggleTheme;
+
+function openSettings(){ $('settingsDrawer').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeDrawer(id){ const el = $(id); if(el){ el.classList.remove('open'); document.body.style.overflow=''; } }
+window.openSettings = openSettings;
+window.closeDrawer = closeDrawer;
+
+$('settingsBtn').addEventListener('click', openSettings);
+$('menuBtn').addEventListener('click', function(){
+  $('menuDrawer').classList.add('open'); document.body.style.overflow='hidden';
+});
+$('themeBtn').addEventListener('click', toggleTheme);
+
+$$('[data-theme-set]').forEach(function(b){
+  b.addEventListener('click', function(){ state.settings.theme = b.dataset.themeSet; applySettings(); });
+});
+$$('[data-accent-set]').forEach(function(b){
+  b.addEventListener('click', function(){ state.settings.accent = b.dataset.accentSet; applySettings(); });
+});
+$$('[data-toggle]').forEach(function(t){
+  t.addEventListener('click', function(){
+    const k = t.dataset.toggle;
+    state.settings[k] = !state.settings[k];
+    applySettings();
+    if(k==='sound' && state.settings.sound) beep();
+  });
+});
+
+const arRange = $('arSize');
+if(arRange){
+  arRange.value = state.settings.arSize;
+  arRange.addEventListener('input', function(){
+    state.settings.arSize = +arRange.value;
+    document.documentElement.style.setProperty('--ar-size', arRange.value+'px');
+    $('arSizeLabel').textContent = arRange.value;
+    DB.set('settings', state.settings);
+  });
+}
+
+function exportData(){
+  const data = {
+    settings: state.settings, stars: state.stars, notes: state.notes,
+    favSurahs: state.favSurahs, memo: state.memo,
+    registrations: DB.get('registrations', []),
+    ratings: DB.get('ratings', []),
+    gallery: DB.get('gallery', [])
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'al-marifah-data.json';
+  a.click();
+  toast('Your data has been exported', 'ok');
+}
+window.exportData = exportData;
+
+function resetData(){
+  if(!confirm('This will erase all your notes, favourites, memorisation progress, registrations and gallery. Continue?')) return;
+  ['stars','notes','favSurahs','memo','registrations','ratings','gallery','settings'].forEach(k=>DB.del(k));
+  toast('All data reset. Reloading…', 'info', 1500);
+  setTimeout(()=>location.reload(), 1200);
+}
+window.resetData = resetData;
+
+/* ---------- SEARCH ---------- */
+const searchIndex = [
+  ...SURAHS.map(s=>({ title:s[0]+'. '+s[1], sub:s[3]+' ayat · '+s[4], ico:'book',
+      act:function(){ showView('home'); jumpTo(s[0],1); } })),
+  ...QURAN_CLASSES.map(q=>({ title:q.t, sub:"Qur'an class · "+q.s, ico:q.k,
+      act:function(){ showView('quran'); openArt(q); } })),
+  ...COMPUTER_SKILLS.map(c=>({ title:c.t, sub:'Computer skill · '+c.s, ico:c.k,
+      act:function(){ showView('computer'); openArt(c); } })),
+  ...SERVICES.map(v=>({ title:v.t, sub:'Service · '+v.s, ico:v.k,
+      act:function(){ showView('services'); openArt(v); } }))
+];
+
+const searchOverlay = $('searchOverlay');
+const searchInput = $('searchInput');
+const searchResults = $('searchResults');
+
+function openSearch(){
+  searchOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(()=>searchInput.focus(), 60);
+  renderSearch('');
+}
+window.openSearch = openSearch;
+
+function closeSearch(){ searchOverlay.classList.remove('open'); document.body.style.overflow=''; }
+$('searchBtn').addEventListener('click', openSearch);
+searchOverlay.addEventListener('click', function(e){ if(e.target === searchOverlay) closeSearch(); });
+
+function renderSearch(q){
+  const term = q.trim().toLowerCase();
+  const list = term
+    ? searchIndex.filter(x=>x.title.toLowerCase().includes(term) || x.sub.toLowerCase().includes(term)).slice(0,24)
+    : searchIndex.slice(0,12);
+  if(!list.length){
+    searchResults.innerHTML = '<div class="empty" style="padding:40px 20px"><svg><use href="#i-search"/></svg><p>No results for "'+escapeHTML(q)+'"</p></div>';
+    return;
+  }
+  searchResults.innerHTML = list.map((x,i)=>(
+    '<div class="sr-item" data-sr="'+i+'"><div class="sr-ico"><svg><use href="#i-'+x.ico+'"/></svg></div><div><div class="sr-t">'+x.title+'</div><div class="sr-s">'+x.sub+'</div></div></div>'
+  )).join('');
+  $$('.sr-item', searchResults).forEach(function(el,i){
+    el.addEventListener('click', function(){ closeSearch(); list[i].act(); });
+  });
+}
+searchInput.addEventListener('input', function(){ renderSearch(searchInput.value); });
+
+/* ---------- SHARE ---------- */
+const SITE_URL = (function(){
+  try{
+    const u = new URL(window.location.href);
+    u.hash = ''; u.search = '';
+    return u.toString();
+  }catch(e){ return window.location.href; }
+})();
+const SHARE_TEXT = "Join Al-Ma'rifah Academy — online Qur'an classes, Microsoft Office, Google Workspace & AI training. Enhance your skills and knowledge!";
+
+const SHARE_TARGETS = [
+  { n:'WhatsApp', c:'#25D366', u:'https://wa.me/?text='+encodeURIComponent(SHARE_TEXT+' '+SITE_URL) },
+  { n:'Facebook', c:'#1877F2', u:'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(SITE_URL) },
+  { n:'Telegram', c:'#26A5E4', u:'https://t.me/share/url?url='+encodeURIComponent(SITE_URL)+'&text='+encodeURIComponent(SHARE_TEXT) },
+  { n:'X', c:'#000000', u:'https://twitter.com/intent/tweet?text='+encodeURIComponent(SHARE_TEXT)+'&url='+encodeURIComponent(SITE_URL) },
+  { n:'LinkedIn', c:'#0A66C2', u:'https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(SITE_URL) },
+  { n:'TikTok', c:'#FE2C55', u:'copy' },
+  { n:'Email', c:'#c9a227', u:'mailto:?subject='+encodeURIComponent("Al-Ma'rifah Academy")+'&body='+encodeURIComponent(SHARE_TEXT+' '+SITE_URL) },
+  { n:'Copy link', c:'#64748b', u:'copy' }
+];
+
+function openShare(){
+  $('shareGrid').innerHTML = SHARE_TARGETS.map(function(s,i){
+    const initial = s.n === 'Copy link' ? '⧉' : s.n === 'Email' ? '@' : s.n[0];
+    return '<button class="share-item" type="button" data-share="'+i+'"><div class="share-ico" style="background:'+s.c+'">'+initial+'</div><span>'+s.n+'</span></button>';
+  }).join('');
+  $$('[data-share]').forEach(function(b){
+    b.addEventListener('click', function(){
+      const t = SHARE_TARGETS[+b.dataset.share];
+      if(t.u === 'copy'){ copyLink(); return; }
+      if(!t.u){ copyLink(); toast('Link copied — paste into TikTok', 'info'); return; }
+      window.open(t.u, '_blank', 'noopener,width=640,height=560');
+    });
+  });
+  openModal('shareModal');
+}
+window.openShare = openShare;
+$('shareBtn').addEventListener('click', openShare);
+
+function copyLink(){
+  const done = function(){ toast('Link copied to clipboard', 'ok'); };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(SITE_URL).then(done).catch(function(){ fallbackCopy(done); });
+  } else { fallbackCopy(done); }
+}
+function fallbackCopy(cb){
+  const ta = document.createElement('textarea');
+  ta.value = SITE_URL; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); cb(); }catch(e){ toast('Could not copy link','err'); }
+  ta.remove();
+}
+window.copyLink = copyLink;
+
+/* ---------- CONTACT ---------- */
+function openContact(){
+  $('contactBody').innerHTML =
+    '<a class="contact-row" href="tel:+201285968529"><div class="contact-ico"><svg><use href="#i-phone"/></svg></div><div class="contact-info"><div class="lbl">Phone (Egypt)</div><div class="val">+20 12 8596 8529</div></div></a>' +
+    '<a class="contact-row" href="tel:+220835055653"><div class="contact-ico"><svg><use href="#i-phone"/></svg></div><div class="contact-info"><div class="lbl">Phone (Gambia)</div><div class="val">+220 83 505 5653</div></div></a>' +
+    '<a class="contact-row" href="https://wa.me/220835055653" target="_blank" rel="noopener"><div class="contact-ico"><svg><use href="#i-wa"/></svg></div><div class="contact-info"><div class="lbl">WhatsApp</div><div class="val">+220 83 505 5653</div></div></a>' +
+    '<a class="contact-row" href="mailto:Muhammadbasiru125g@gmail.com"><div class="contact-ico"><svg><use href="#i-mail"/></svg></div><div class="contact-info"><div class="lbl">Email</div><div class="val">Muhammadbasiru125g@gmail.com</div></div></a>' +
+    '<div style="margin-top:16px;padding:14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);font-size:12.5px;color:var(--muted);line-height:1.7"><strong style="color:var(--text-2)">Address</strong><br>Global Online Campus · Cairo, Egypt · Banjul, The Gambia<br><em style="opacity:.75">Update with your full street address when ready</em></div>';
+  openModal('contactModal');
+}
+window.openContact = openContact;
+$('contactBtn').addEventListener('click', openContact);
+
+/* ---------- GALLERY ---------- */
+const galleryEl = $('gallery');
+const fileInput = $('fileInput');
+const uploadZone = $('uploadZone');
+
+function renderGallery(){
+  const items = DB.get('gallery', []);
+  galleryEl.innerHTML = items.map(function(src,i){
+    return '<div class="gal-item"><img src="'+src+'" alt="Upload '+(i+1)+'"><button type="button" class="gal-del" data-del="'+i+'"><svg><use href="#i-close"/></svg></button></div>';
+  }).join('');
+  $$('[data-del]').forEach(function(b){
+    b.addEventListener('click', function(){
+      const items = DB.get('gallery', []);
+      items.splice(+b.dataset.del, 1);
+      DB.set('gallery', items);
+      renderGallery();
+      toast('Image removed', 'info', 1600);
+    });
+  });
+}
+
+uploadZone.addEventListener('click', function(){ fileInput.click(); });
+fileInput.addEventListener('change', function(){
+  const files = [...fileInput.files];
+  if(!files.length) return;
+  const items = DB.get('gallery', []);
+  let pending = files.length;
+  files.forEach(function(f){
+    const reader = new FileReader();
+    reader.onload = function(ev){
+      items.push(ev.target.result);
+      if(--pending === 0){
+        try{ DB.set('gallery', items); }catch(err){ toast('Storage full — try smaller images', 'err'); }
+        renderGallery();
+        toast(files.length+' image'+(files.length>1?'s':'')+' added', 'ok');
+      }
+    };
+    reader.readAsDataURL(f);
+  });
+  fileInput.value = '';
+});
+
+['dragenter','dragover'].forEach(function(ev){
+  uploadZone.addEventListener(ev, function(e){ e.preventDefault(); uploadZone.classList.add('drag'); });
+});
+['dragleave','drop'].forEach(function(ev){
+  uploadZone.addEventListener(ev, function(e){ e.preventDefault(); uploadZone.classList.remove('drag'); });
+});
+uploadZone.addEventListener('drop', function(e){
+  const files = [...e.dataTransfer.files].filter(f=>f.type.startsWith('image/'));
+  if(!files.length) return;
+  const items = DB.get('gallery', []);
+  let pending = files.length;
+  files.forEach(function(f){
+    const reader = new FileReader();
+    reader.onload = function(ev){
+      items.push(ev.target.result);
+      if(--pending === 0){
+        try{ DB.set('gallery', items); }catch(err){ toast('Storage full','err'); }
+        renderGallery(); toast('Images added','ok');
+      }
+    };
+    reader.readAsDataURL(f);
+  });
+});
+
+/* ---------- CONFETTI ---------- */
+const cvs = $('confetti');
+const ctx = cvs.getContext('2d');
+let particles = [], confRunning = false;
+function confetti(){
+  cvs.classList.add('on');
+  cvs.width = innerWidth; cvs.height = innerHeight;
+  particles = [];
+  const colors = ['#c9a227','#e6c65a','#12a37a','#6d5cf5','#e0629a','#ffffff'];
+  for(let i=0;i<130;i++){
+    particles.push({
+      x: innerWidth/2 + (Math.random()-0.5)*260, y: innerHeight/2 - 60,
+      vx: (Math.random()-0.5)*11, vy: Math.random()*-13 - 3,
+      size: Math.random()*7+3, color: colors[Math.floor(Math.random()*colors.length)],
+      rot: Math.random()*Math.PI, vr: (Math.random()-0.5)*0.3, life: 1
+    });
+  }
+  if(!confRunning){ confRunning = true; requestAnimationFrame(confLoop); }
+  setTimeout(function(){ cvs.classList.remove('on'); }, 4200);
+}
+function confLoop(){
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+  let alive = false;
+  particles.forEach(function(p){
+    p.vy += 0.36; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+    p.vx *= 0.995; p.life -= 0.0075;
+    if(p.life > 0 && p.y < cvs.height + 60){
+      alive = true;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      ctx.globalAlpha = Math.max(0, p.life);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size*0.6);
+      ctx.restore();
+    }
+  });
+  if(alive){ requestAnimationFrame(confLoop); }
+  else { confRunning = false; ctx.clearRect(0,0,cvs.width,cvs.height); }
+}
+
+/* ---------- SCROLL ---------- */
+const progressBar = $('progress');
+const toTop = $('toTop');
+addEventListener('scroll', function(){
+  const h = document.documentElement;
+  const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progressBar.style.width = pct + '%';
+  toTop.classList.toggle('show', h.scrollTop > 500);
+}, {passive:true});
+toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+/* ---------- COUNTERS ---------- */
+function animateCounters(){
+  $$('[data-count]').forEach(function(el){
+    const target = +el.dataset.count;
+    const suffix = el.dataset.suffix || '';
+    const dur = 1400, start = performance.now();
+    function step(t){
+      const p = Math.min((t-start)/dur, 1);
+      const eased = 1 - Math.pow(1-p, 3);
+      el.textContent = Math.round(target*eased) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+/* ---------- KEYBOARD ---------- */
+addEventListener('keydown', function(e){
+  if(e.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName)){
+    e.preventDefault(); openSearch();
+  }
+  if(e.key === 'Escape'){
+    $$('.modal.open').forEach(m=>closeModal(m.id));
+    closeSearch();
+    closeDrawer('settingsDrawer');
+    closeDrawer('menuDrawer');
+  }
+});
+
+/* ---------- DAILY AYAH ---------- */
+function renderDailyAyah(){ /* placeholder if needed — no longer rendered on home */ }
+
+/* ---------- BOOT ---------- */
+function boot(){
+  applySettings();
+  renderReader();
+  renderGallery();
+  $('year').textContent = new Date().getFullYear();
+  setTimeout(animateCounters, 400);
+  setTimeout(function(){ toast("Welcome to Al-Ma'rifah Academy ✨", 'info', 3000); }, 800);
+}
+boot();
+
+})();
+</script>
+</body>
+</html>
